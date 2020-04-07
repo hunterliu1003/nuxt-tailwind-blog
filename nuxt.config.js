@@ -28,6 +28,7 @@ module.exports = {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/markdownit',
     'nuxt-compress', // nuxt-compress is a simple asset compression module for Gzip and Brotili
+    '@nuxtjs/robots',
     '@nuxtjs/sitemap' // declare the sitemap module at end of array
   ],
   optimization: {
@@ -79,7 +80,14 @@ module.exports = {
       threshold: 10240
     }
   },
+  robots: [
+    {
+      UserAgent: 'Googlebot',
+      Sitemap: 'https://dist.hunterliu1003.now.sh/sitemap.xml',
+      Allow: '/'
+    }
+  ],
   sitemap: {
-    hostname: 'https://your-website-hostname.com'
+    hostname: 'https://dist.hunterliu1003.now.sh'
   }
 }
