@@ -36,13 +36,13 @@ module.exports = {
       }
     }
   },
-  // brotli 壓縮
   render: {
-    compressor: shrinkRay()
-  },
-  // 啟用 http2
-  http2: {
-    push: true
+    // brotli 壓縮
+    compressor: shrinkRay(),
+    // 啟用 http2
+    http2: {
+      push: true
+    }
   },
   // nuxt-compress is a simple asset compression module for Gzip and Brotili
   modules: ['nuxt-compress'],
