@@ -1,4 +1,5 @@
 const shrinkRay = require('shrink-ray-current')
+const VueAutomaticImportPlugin = require('vue-automatic-import-loader/lib/plugin')
 
 module.exports = {
   mode: 'universal',
@@ -19,7 +20,19 @@ module.exports = {
   css: [],
   plugins: [],
   build: {
-    extractCSS: true
+    extractCSS: true,
+    plugins: [
+      new VueAutomaticImportPlugin({
+        match(originalTag, { kebabTag, camelTag, path, component }) {
+          if (kebabTag.startsWith('h-')) {
+            return [
+              camelTag,
+              `import ${camelTag} from '@/components/${camelTag}.vue'`
+            ]
+          }
+        }
+      })
+    ]
   },
   buildModules: [
     '@nuxtjs/dotenv',

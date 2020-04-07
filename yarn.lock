@@ -10675,6 +10675,13 @@ void-elements@^2.0.1:
   resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-2.0.1.tgz#c066afb582bb1cb4128d60ea92392e94d5e9dbec"
   integrity sha1-wGavtYK7HLQSjWDqkjkulNXp2+w=
 
+vue-automatic-import-loader@^0.1.3:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/vue-automatic-import-loader/-/vue-automatic-import-loader-0.1.3.tgz#f3b0dd369cc844466f4e06c7be5ed985c79c7c88"
+  integrity sha512-a99K6Mv7/n7W0P0c5jXy14XJjAjPztUQIupornYMDoqeu+Rs2lWoY5KjRULqTkk5sl3AzC8ZHqVF6HM94nUidw==
+  dependencies:
+    loader-utils "^1.1.0"
+
 vue-client-only@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/vue-client-only/-/vue-client-only-2.0.0.tgz#ddad8d675ee02c761a14229f0e440e219de1da1c"
