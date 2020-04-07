@@ -18,6 +18,9 @@ module.exports = {
   loading: { color: '#fff' },
   css: [],
   plugins: [],
+  build: {
+    extractCSS: true
+  },
   buildModules: [
     '@nuxtjs/dotenv',
     '@nuxtjs/eslint-module',
