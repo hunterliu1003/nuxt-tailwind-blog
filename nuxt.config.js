@@ -54,10 +54,7 @@ module.exports = {
     purgeCSSInDev: true
   },
   purgeCSS: {
-    extractor(content) {
-      return content.match(/[A-z0-9-:\\/]+/g)
-    },
-    extensions: ['md']
+    paths: ['content/**/*.md']
   },
   markdownit: {
     html: true,
