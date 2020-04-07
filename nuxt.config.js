@@ -47,6 +47,15 @@ module.exports = {
       push: true
     }
   },
+  tailwindcss: {
+    purgeCSSInDev: true
+  },
+  purgeCSS: {
+    extractor(content) {
+      return content.match(/[A-z0-9-:\\/]+/g)
+    },
+    extensions: ['md']
+  },
   markdownit: {
     html: true,
     linkify: true,
