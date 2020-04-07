@@ -22,7 +22,9 @@ module.exports = {
     '@nuxtjs/dotenv',
     '@nuxtjs/eslint-module',
     '@nuxtjs/stylelint-module',
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/markdownit',
+    'nuxt-compress' // nuxt-compress is a simple asset compression module for Gzip and Brotili
   ],
   optimization: {
     splitChunks: {
@@ -44,8 +46,12 @@ module.exports = {
       push: true
     }
   },
-  // nuxt-compress is a simple asset compression module for Gzip and Brotili
-  modules: ['nuxt-compress'],
+  markdownit: {
+    html: true,
+    linkify: true,
+    breaks: true,
+    typographer: true
+  },
   'nuxt-compress': {
     gzip: {
       cache: true
