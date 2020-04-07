@@ -1,5 +1,5 @@
-<template lang="pug">
-  div(v-html="test")
+<template>
+  <div v-html="test"></div>
 </template>
 
 <script>
