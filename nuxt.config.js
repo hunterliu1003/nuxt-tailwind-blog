@@ -24,7 +24,8 @@ module.exports = {
     '@nuxtjs/stylelint-module',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/markdownit',
-    'nuxt-compress' // nuxt-compress is a simple asset compression module for Gzip and Brotili
+    'nuxt-compress', // nuxt-compress is a simple asset compression module for Gzip and Brotili
+    '@nuxtjs/sitemap' // declare the sitemap module at end of array
   ],
   optimization: {
     splitChunks: {
@@ -59,5 +60,8 @@ module.exports = {
     brotli: {
       threshold: 10240
     }
+  },
+  sitemap: {
+    hostname: 'https://your-website-hostname.com'
   }
 }
