@@ -51,7 +51,16 @@ module.exports = {
     html: true,
     linkify: true,
     breaks: true,
-    typographer: true
+    typographer: true,
+    use: [
+      [
+        'markdown-it-attrs',
+        {
+          leftDelimiter: '{{',
+          rightDelimiter: '}}'
+        }
+      ]
+    ]
   },
   'nuxt-compress': {
     gzip: {
