@@ -1,3 +1,3 @@
 <template lang="pug">
-    button HButton
+  button HButton
 </template>
