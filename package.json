@@ -23,9 +23,11 @@
   },
   "dependencies": {
     "codemirror": "^5.52.2",
-    "express": "^4.16.4",
+    "highlight.js": "^9.18.1",
+    "markdown-it-attrs": "^3.0.2",
+    "markdown-it-highlightjs": "^3.1.0",
+    "markdown-it-playground": "^0.0.5",
     "nuxt": "2.12.2",
-    "nuxt-compress": "^1.1.0",
     "vue-codemirror": "^4.0.6"
   },
   "devDependencies": {
@@ -43,12 +45,13 @@
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-nuxt": ">=0.4.2",
     "eslint-plugin-prettier": "^3.1.2",
+    "express": "^4.16.4",
     "gray-matter": "^4.0.2",
     "husky": "^4.0.0",
     "lint-staged": "^10.0.0",
-    "markdown-it-attrs": "^3.0.2",
     "node-zopfli-es": "^1.0.4",
     "nodemon": "^1.18.9",
+    "nuxt-compress": "^1.1.0",
     "prettier": "^1.19.1",
     "pug": "^2.0.4",
     "pug-plain-loader": "^1.0.0",

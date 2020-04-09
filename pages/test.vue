@@ -1,7 +1,7 @@
 <template>
   <div>
     <no-ssr>
-      <codemirror v-model="test" :options="codemirrorOptions"></codemirror>
+      <codemirror v-model="test" :options="codemirrorOptions" />
     </no-ssr>
     <h1>{{ obj.data.title }}</h1>
     <div v-html="$md.render(obj.content)"></div>

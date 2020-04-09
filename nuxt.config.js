@@ -18,6 +18,11 @@ module.exports = {
   },
   loading: { color: '#fff' },
   css: [
+    /* markdown-it start */
+    'highlight.js/styles/default.css',
+    'highlight.js/styles/monokai-sublime.css',
+    /* markdown-it end */
+
     /* codemirror start */
     'codemirror/lib/codemirror.css',
     'codemirror/theme/monokai.css'
@@ -74,7 +79,11 @@ module.exports = {
   },
   purgeCSS: {
     paths: ['content/**/*.md'],
-    whitelistPatternsChildren: [/CodeMirror/, /cm-/]
+    whitelistPatternsChildren: [
+      /CodeMirror/, // for codemirror
+      /cm-/, // for codemirror
+      /hljs/ // for highlight.js
+    ]
   },
   markdownit: {
     injected: true,
@@ -89,7 +98,9 @@ module.exports = {
           leftDelimiter: '{{',
           rightDelimiter: '}}'
         }
-      ]
+      ],
+      'markdown-it-playground',
+      'markdown-it-highlightjs'
     ]
   },
   'nuxt-compress': {
