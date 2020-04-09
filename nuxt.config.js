@@ -17,8 +17,13 @@ module.exports = {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   loading: { color: '#fff' },
-  css: [],
-  plugins: [],
+  css: [
+    /* codemirror start */
+    'codemirror/lib/codemirror.css',
+    'codemirror/theme/monokai.css'
+    /* codemirror end */
+  ],
+  plugins: [{ src: '@/plugins/codemirror', ssr: false }],
   build: {
     extractCSS: true,
     plugins: [
@@ -68,7 +73,8 @@ module.exports = {
     purgeCSSInDev: true
   },
   purgeCSS: {
-    paths: ['content/**/*.md']
+    paths: ['content/**/*.md'],
+    whitelistPatternsChildren: [/CodeMirror/, /cm-/]
   },
   markdownit: {
     injected: true,
