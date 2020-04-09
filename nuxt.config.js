@@ -71,6 +71,7 @@ module.exports = {
     paths: ['content/**/*.md']
   },
   markdownit: {
+    injected: true,
     html: true,
     linkify: true,
     breaks: true,
