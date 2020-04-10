@@ -100,7 +100,7 @@ module.exports = {
         }
       ],
       'markdown-it-playground',
-      'markdown-it-highlightjs'
+      '@/plugins/markdown-it/markdownItHighlightjs'
     ]
   },
   'nuxt-compress': {

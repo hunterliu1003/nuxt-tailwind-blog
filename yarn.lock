@@ -6112,11 +6112,6 @@ lodash.defaultsdeep@^4.6.1:
   resolved "https://registry.yarnpkg.com/lodash.defaultsdeep/-/lodash.defaultsdeep-4.6.1.tgz#512e9bd721d272d94e3d3a63653fa17516741ca6"
   integrity sha512-3j8wdDzYuWO3lM3Reg03MuQR957t287Rpcxp1njpEa8oDrikb+FwGdW3n+FELh/A6qib6yPit0j/pv9G/yeAqA==
 
-lodash.flow@^3.5.0:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/lodash.flow/-/lodash.flow-3.5.0.tgz#87bf40292b8cf83e4e8ce1a3ae4209e20071675a"
-  integrity sha1-h79AKSuM+D5OjOGjrkIJ4gBxZ1o=
-
 lodash.get@^4.4.2:
   version "4.4.2"
   resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
@@ -6315,14 +6310,6 @@ markdown-it-attrs@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/markdown-it-attrs/-/markdown-it-attrs-3.0.2.tgz#55a466b2b60d755b2a77288dff175e741fc1143d"
   integrity sha512-q45vdXU9TSWaHgFkWEFM97YHEoCmOyG9csLLdv3oVC6ARjT77u4wfng9rRtSOMb5UpxzT7zTX5GBbwm15H40dw==
-
-markdown-it-highlightjs@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/markdown-it-highlightjs/-/markdown-it-highlightjs-3.1.0.tgz#1f4083270637bbecde26babbc9b7f333306e3010"
-  integrity sha512-SYy8fXlZ7Bk+Q+bc9JmHHcMCUFsKR3nr1JjkpPnq0gsmLOyIaxJfRoIAVqWF/AIuN7CZlJWQuSFwQoBb6dZmnQ==
-  dependencies:
-    highlight.js "^9.18.1"
-    lodash.flow "^3.5.0"
 
 markdown-it-playground@^0.0.5:
   version "0.0.5"
