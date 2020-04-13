@@ -75,7 +75,7 @@ module.exports = {
     }
   },
   tailwindcss: {
-    purgeCSSInDev: true
+    purgeCSSInDev: false
   },
   purgeCSS: {
     paths: ['content/**/*.md'],
