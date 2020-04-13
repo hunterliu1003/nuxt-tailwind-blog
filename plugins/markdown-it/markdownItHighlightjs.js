@@ -20,7 +20,7 @@ const highlightAuto = (code, lang) =>
 
 // Wrap a render function to add `hljs` class to code blocks.
 const wrap = render =>
-  function(...args) {
+  function (...args) {
     return render
       .apply(this, args)
       .replace('<code class="', '<code class="hljs ')
