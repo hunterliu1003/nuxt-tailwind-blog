@@ -100,7 +100,17 @@ module.exports = {
         }
       ],
       'markdown-it-playground',
-      '@/plugins/markdown-it/markdownItHighlightjs'
+      '@/plugins/markdown-it/markdownItHighlightjs',
+      [
+        'markdown-it-anchor',
+        {
+          level: 1,
+          permalink: true,
+          permalinkClass: 'md-anchor',
+          permalinkSymbol: '#',
+          permalinkBefore: true
+        }
+      ]
     ]
   },
   'nuxt-compress': {

@@ -1,6 +1,6 @@
 <template lang="pug">
 	div
-		h1 {{ value.data.title }}
+		h1 {{ value.data }}
 		HMarkdown(:value='value.content')
 </template>
 
