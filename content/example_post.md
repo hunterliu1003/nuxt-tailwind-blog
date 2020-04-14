@@ -4,14 +4,21 @@ lang: en-US
 description: 'some description'
 layout: 'default'
 metaTitle: 'pageTitle | HunterLiu Blog'
-meta:
-  - name: description
+meta: [
+  {
+    hid: description,
+    name: description,
     content: hello
-  - name: keywords
+  },
+  {
+    name: keywords,
     content: super duper SEO
+  }
+]
 tags: ['vue', 'tailwindcss', 'markdown-it']
 date: '2020-04-14'
 ---
+
 # Hello World!!
 
 ## Hello World!!

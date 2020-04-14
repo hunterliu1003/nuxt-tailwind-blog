@@ -26,6 +26,12 @@ export default {
         lineWrapping: true
       }
     }
+  },
+  head() {
+    return {
+      title: this.post.data.metaTitle,
+      meta: this.post.data.meta
+    }
   }
 }
 </script>
