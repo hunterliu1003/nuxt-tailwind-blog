@@ -1,7 +1,7 @@
 <template lang="pug">
   div
     HHeader
-    no-ssr
+    client-only
       codemirror(v-model='post.content' :options='codemirrorOptions')
     HPost(:value="post")
 </template>
