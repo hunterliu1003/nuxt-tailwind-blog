@@ -1120,6 +1120,13 @@
   resolved "https://registry.yarnpkg.com/@nuxtjs/robots/-/robots-2.4.2.tgz#9a96c91abb70e39b414eec502ef1cf7d5ef0235e"
   integrity sha512-BW3qhvxlPBKlMkZHtARFPeliFraiZHS28G3j4qgRbSfOBtHC0yDX3Dnq1LkQMzAbPfbw6A1L3sdjgBVZZnfFAw==
 
+"@nuxtjs/router@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/router/-/router-1.5.0.tgz#bed68f841b7a3457908c9ed36148172d75aa976f"
+  integrity sha512-LiWvlikpUaBqj8QVBzvo50pnK+8Wj6U9OkS/osYDD7dj0Et5L50pkO+VxVZq4r4boHfki/II98MKXoiTDH/+GQ==
+  dependencies:
+    consola "^2.10.1"
+
 "@nuxtjs/sitemap@^2.2.0":
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@nuxtjs/sitemap/-/sitemap-2.2.0.tgz#e86fbd8d7568252440a052b416fab7e46e25d862"

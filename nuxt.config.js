@@ -1,5 +1,8 @@
 const shrinkRay = require('shrink-ray-current')
 const VueAutomaticImportPlugin = require('vue-automatic-import-loader/lib/plugin')
+const { getRoutes } = require('./utils/routerGenerator')
+
+const postsRoutes = getRoutes('content', '/path')
 
 module.exports = {
   mode: 'universal',
@@ -49,6 +52,7 @@ module.exports = {
     '@nuxtjs/eslint-module',
     '@nuxtjs/stylelint-module',
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/router',
     '@nuxtjs/markdownit',
     'nuxt-compress', // nuxt-compress is a simple asset compression module for Gzip and Brotili
     '@nuxtjs/robots',
@@ -84,6 +88,10 @@ module.exports = {
       /cm-/, // for codemirror
       /hljs/ // for highlight.js
     ]
+  },
+  routerModule: {
+    /* module options */
+    keepDefaultRouter: true
   },
   markdownit: {
     injected: true,
@@ -129,6 +137,10 @@ module.exports = {
     }
   ],
   sitemap: {
-    hostname: 'https://dist.hunterliu1003.now.sh'
+    hostname: 'https://dist.hunterliu1003.now.sh',
+    routes: postsRoutes
+  },
+  generate: {
+    routes: postsRoutes
   }
 }
