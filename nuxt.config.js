@@ -1,10 +1,9 @@
-const shrinkRay = require('shrink-ray-current')
-const VueAutomaticImportPlugin = require('vue-automatic-import-loader/lib/plugin')
-const { getRoutes } = require('./utils/routerGenerator')
+import shrinkRay from 'shrink-ray-current'
+import VueAutomaticImportPlugin from 'vue-automatic-import-loader/lib/plugin'
+import { getRoutes } from './utils/routerGenerator'
+const postsRoutes = getRoutes('content', '/posts')
 
-const postsRoutes = getRoutes('content', '/path')
-
-module.exports = {
+export default {
   mode: 'universal',
   head: {
     title: process.env.npm_package_name || '',
@@ -32,32 +31,6 @@ module.exports = {
     /* codemirror end */
   ],
   plugins: [{ src: '@/plugins/codemirror', ssr: false }],
-  build: {
-    extractCSS: true,
-    plugins: [
-      new VueAutomaticImportPlugin({
-        match(originalTag, { kebabTag, camelTag, path, component }) {
-          if (kebabTag.startsWith('h-')) {
-            return [
-              camelTag,
-              `import ${camelTag} from '@/components/${camelTag}.vue'`
-            ]
-          }
-        }
-      })
-    ]
-  },
-  buildModules: [
-    '@nuxtjs/dotenv',
-    '@nuxtjs/eslint-module',
-    '@nuxtjs/stylelint-module',
-    '@nuxtjs/tailwindcss',
-    '@nuxtjs/router',
-    '@nuxtjs/markdownit',
-    'nuxt-compress', // nuxt-compress is a simple asset compression module for Gzip and Brotili
-    '@nuxtjs/robots',
-    '@nuxtjs/sitemap' // declare the sitemap module at end of array
-  ],
   optimization: {
     splitChunks: {
       cacheGroups: {
@@ -78,6 +51,38 @@ module.exports = {
       push: true
     }
   },
+  build: {
+    extractCSS: true,
+    plugins: [
+      new VueAutomaticImportPlugin({
+        match(originalTag, { kebabTag, camelTag, path, component }) {
+          if (kebabTag.startsWith('h-')) {
+            return [
+              camelTag,
+              `import ${camelTag} from '@/components/${camelTag}.vue'`
+            ]
+          }
+        }
+      })
+    ]
+  },
+  buildModules: [
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/stylelint-module',
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/router'
+  ],
+  modules: [
+    '@nuxtjs/markdownit',
+    '@nuxtjs/dotenv',
+    '@nuxtjs/robots',
+    /* 
+    fix @nuxt/sitemap via SRR not working on zeit now #106 
+    https://github.com/nuxt-community/sitemap-module/issues/106#issuecomment-603533758
+    */
+    '@nuxtjs/sitemap',
+    'nuxt-compress' // nuxt-compress is a simple asset compression module for Gzip and Brotili
+  ],
   tailwindcss: {
     purgeCSSInDev: false
   },
@@ -121,6 +126,20 @@ module.exports = {
       ]
     ]
   },
+  robots: [
+    {
+      UserAgent: 'Googlebot',
+      Sitemap: 'https://nuxt-tailwind-blog.now.sh/sitemap.xml',
+      Allow: '/'
+    }
+  ],
+  sitemap: {
+    hostname: 'https://nuxt-tailwind-blog.now.sh',
+    routes: postsRoutes
+  },
+  generate: {
+    routes: postsRoutes
+  },
   'nuxt-compress': {
     gzip: {
       cache: true
@@ -128,19 +147,5 @@ module.exports = {
     brotli: {
       threshold: 10240
     }
-  },
-  robots: [
-    {
-      UserAgent: 'Googlebot',
-      Sitemap: 'https://dist.hunterliu1003.now.sh/sitemap.xml',
-      Allow: '/'
-    }
-  ],
-  sitemap: {
-    hostname: 'https://dist.hunterliu1003.now.sh',
-    routes: postsRoutes
-  },
-  generate: {
-    routes: postsRoutes
   }
 }
