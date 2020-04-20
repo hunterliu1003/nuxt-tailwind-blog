@@ -27,7 +27,7 @@ export default {
   ],
   plugins: [
     { src: '@/plugins/codemirror', ssr: false },
-    { src: '@/plugins/prism' }
+    { src: '@/plugins/prism', mode: 'client' }
   ],
   optimization: {
     splitChunks: {
