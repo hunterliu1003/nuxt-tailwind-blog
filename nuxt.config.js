@@ -20,17 +20,15 @@ export default {
   },
   loading: { color: '#fff' },
   css: [
-    /* markdown-it start */
-    'highlight.js/styles/default.css',
-    'highlight.js/styles/monokai-sublime.css',
-    /* markdown-it end */
-
     /* codemirror start */
     'codemirror/lib/codemirror.css',
     'codemirror/theme/monokai.css'
     /* codemirror end */
   ],
-  plugins: [{ src: '@/plugins/codemirror', ssr: false }],
+  plugins: [
+    { src: '@/plugins/codemirror', ssr: false },
+    { src: '@/plugins/prism' }
+  ],
   optimization: {
     splitChunks: {
       cacheGroups: {
@@ -91,7 +89,9 @@ export default {
     whitelistPatternsChildren: [
       /CodeMirror/, // for codemirror
       /cm-/, // for codemirror
-      /hljs/ // for highlight.js
+      /token/, // for prism
+      /pre/, // for prism
+      /code/ // for prism
     ]
   },
   routerModule: {
@@ -113,7 +113,6 @@ export default {
         }
       ],
       'markdown-it-playground',
-      '@/plugins/markdown-it/markdownItHighlightjs',
       [
         'markdown-it-anchor',
         {
