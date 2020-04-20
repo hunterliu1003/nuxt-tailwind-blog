@@ -127,7 +127,7 @@ export default {
   },
   robots: [
     {
-      UserAgent: 'Googlebot',
+      UserAgent: '*',
       Sitemap: 'https://nuxt-tailwind-blog.now.sh/sitemap.xml',
       Allow: '/'
     }
