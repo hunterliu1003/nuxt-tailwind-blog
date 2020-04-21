@@ -1,5 +1,5 @@
 <template lang="pug">
-	div(ref='HMarkdown' v-html="$md.render(value)")
+	div(v-html="$md.render(value)")
 </template>
 
 <script>
@@ -9,9 +9,6 @@ export default {
       type: String,
       required: true
     }
-  },
-  mounted() {
-    this.$prism.highlightAllUnder(this.$refs.HMarkdown)
   }
 }
 </script>

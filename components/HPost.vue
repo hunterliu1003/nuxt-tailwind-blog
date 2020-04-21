@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    HMarkdown(:value="obj")
+    HMarkdown(:value="'```json\\n' + JSON.stringify(value.data, null, 2) + '\\n```'")
     HMarkdown(:value='value.content')
 </template>
 
@@ -10,11 +10,6 @@ export default {
     value: {
       type: Object,
       required: true
-    }
-  },
-  computed: {
-    obj() {
-      return '```json\n' + JSON.stringify(this.value.data, null, 4) + '\n```'
     }
   }
 }

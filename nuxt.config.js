@@ -25,10 +25,7 @@ export default {
     'codemirror/theme/monokai.css'
     /* codemirror end */
   ],
-  plugins: [
-    { src: '@/plugins/codemirror', ssr: false },
-    { src: '@/plugins/prism', mode: 'client' }
-  ],
+  plugins: [{ src: '@/plugins/codemirror', mode: 'client' }],
   optimization: {
     splitChunks: {
       cacheGroups: {
@@ -122,7 +119,8 @@ export default {
           permalinkSymbol: '#',
           permalinkBefore: true
         }
-      ]
+      ],
+      '@/plugins/markdown-it/markdownItPrism'
     ]
   },
   robots: [

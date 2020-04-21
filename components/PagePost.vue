@@ -1,25 +1,20 @@
 <template lang="pug">
-  div
+  div(v-once)
     HHeader
-    HPost(:value="post")
+    HPost(:value="require('gray-matter')(require(`!!raw-loader!~/content/${$router.currentRoute.meta.key.substring(2)}`).default)")
 </template>
 
 <script>
-import matter from 'gray-matter'
-
 export default {
-  asyncData(context) {
-    const markdown = require('!!raw-loader!~/content/' +
-      context.route.meta[0].key.substring(2)).default
-    const { content, data } = matter(markdown)
-    return {
-      post: { content, data }
-    }
-  },
   head() {
+    const post = require('gray-matter')(
+      require(`!!raw-loader!~/content/${this.$router.currentRoute.meta.key.substring(
+        2
+      )}`).default
+    )
     return {
-      title: this.post.data.metaTitle,
-      meta: this.post.data.meta
+      title: post.data.metaTitle,
+      meta: post.data.meta
     }
   }
 }
