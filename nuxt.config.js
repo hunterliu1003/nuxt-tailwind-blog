@@ -19,13 +19,7 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   loading: { color: '#fff' },
-  css: [
-    /* codemirror start */
-    'codemirror/lib/codemirror.css',
-    'codemirror/theme/monokai.css'
-    /* codemirror end */
-  ],
-  plugins: [{ src: '@/plugins/codemirror', mode: 'client' }],
+  css: [],
   optimization: {
     splitChunks: {
       cacheGroups: {
@@ -84,8 +78,6 @@ export default {
   purgeCSS: {
     paths: ['content/**/*.md'],
     whitelistPatternsChildren: [
-      /CodeMirror/, // for codemirror
-      /cm-/, // for codemirror
       /token/, // for prism
       /pre/, // for prism
       /code/ // for prism
