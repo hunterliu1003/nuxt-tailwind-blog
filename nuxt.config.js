@@ -22,7 +22,7 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   loading: { color: '#fff' },
-  css: [],
+  css: ['prismjs/themes/prism-tomorrow.css'],
   serverMiddleware: [{ path: '/api', handler: '@/serverMiddleware/api' }],
   optimization: {
     splitChunks: {
@@ -35,6 +35,9 @@ export default {
         }
       }
     }
+  },
+  babel: {
+    presets: []
   },
   render: {
     // brotli 壓縮
@@ -66,7 +69,6 @@ export default {
     '@nuxtjs/router'
   ],
   modules: [
-    '@nuxtjs/markdownit',
     '@nuxtjs/dotenv',
     '@nuxtjs/robots',
     /* 
@@ -90,34 +92,6 @@ export default {
   routerModule: {
     /* module options */
     keepDefaultRouter: true
-  },
-  markdownit: {
-    injected: true,
-    html: true,
-    linkify: true,
-    breaks: true,
-    typographer: true,
-    use: [
-      [
-        'markdown-it-attrs',
-        {
-          leftDelimiter: '{{',
-          rightDelimiter: '}}'
-        }
-      ],
-      'markdown-it-playground',
-      [
-        'markdown-it-anchor',
-        {
-          level: 1,
-          permalink: true,
-          permalinkClass: 'md-anchor',
-          permalinkSymbol: '#',
-          permalinkBefore: true
-        }
-      ],
-      '@/plugins/markdown-it/markdownItPrism'
-    ]
   },
   env: {
     BASE_URL: process.env.BASE_URL

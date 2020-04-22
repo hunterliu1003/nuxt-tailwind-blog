@@ -1,5 +1,4 @@
 import prism from 'prismjs'
-import 'prismjs/themes/prism-tomorrow.css'
 import 'prismjs/components/prism-markup'
 import 'prismjs/components/prism-json'
 import escapeHtml from 'escape-html'

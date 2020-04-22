@@ -19,7 +19,7 @@ tags: ['vue', 'tailwindcss', 'markdown-it']
 date: '2020-04-14'
 ---
 
-# Hello World!!
+# Hello World!! {{ class="ht-test" }}
 
 ## Hello World!!
 

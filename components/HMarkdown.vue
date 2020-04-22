@@ -1,5 +1,5 @@
 <template lang="pug">
-	div(v-html="$md.render(value)")
+	div(v-once v-html="value")
 </template>
 
 <script>
