@@ -73,6 +73,7 @@ export default {
   ],
   modules: [
     '@nuxtjs/dotenv',
+    '@nuxt/http',
     '@nuxtjs/robots',
     /* 
     fix @nuxt/sitemap via SRR not working on zeit now #106 

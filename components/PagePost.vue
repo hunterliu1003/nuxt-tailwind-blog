@@ -6,8 +6,6 @@
 </template>
 
 <script>
-import axios from 'axios'
-
 export default {
   asyncData(context) {
     if (process.static) {
@@ -18,13 +16,13 @@ export default {
       )
       return { content, data }
     } else {
-      return axios({
-        url: process.env.BASE_URL + '/api',
-        method: 'GET',
-        params: {
-          key: context.route.meta[0].key.substring(2)
-        }
-      }).then(res => res.data)
+      return context.$http
+        .$get(
+          `${
+            process.env.BASE_URL
+          }/api?key=${context.route.meta[0].key.substring(2)}`
+        )
+        .then(res => res)
     }
   },
   head() {
