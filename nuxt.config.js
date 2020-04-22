@@ -1,5 +1,6 @@
 import shrinkRay from 'shrink-ray-current'
 import VueAutomaticImportPlugin from 'vue-automatic-import-loader/lib/plugin'
+import cheerio from 'cheerio'
 import { getRoutes } from './utils/routerGenerator'
 const postsRoutes = getRoutes('content', '/posts')
 
@@ -40,6 +41,8 @@ export default {
     presets: []
   },
   render: {
+    // generate 關閉 resourceHints
+    resourceHints: process.env.BUILD_MODE !== 'STATIC',
     // brotli 壓縮
     compressor: shrinkRay(),
     // 啟用 http2
@@ -109,6 +112,13 @@ export default {
   },
   generate: {
     routes: postsRoutes
+  },
+  hooks: {
+    'generate:page': page => {
+      const doc = cheerio.load(page.html)
+      doc(`body script`).remove()
+      page.html = doc.html()
+    }
   },
   'nuxt-compress': {
     gzip: {

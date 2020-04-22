@@ -10,13 +10,22 @@ import axios from 'axios'
 
 export default {
   asyncData(context) {
-    return axios({
-      url: process.env.BASE_URL + '/api',
-      method: 'GET',
-      params: {
-        key: context.route.meta[0].key.substring(2)
-      }
-    }).then(res => res.data)
+    if (process.static) {
+      const { content, data } = require('~/plugins/pageParser')(
+        require(`!!raw-loader!~/content/${context.route.meta[0].key.substring(
+          2
+        )}`).default
+      )
+      return { content, data }
+    } else {
+      return axios({
+        url: process.env.BASE_URL + '/api',
+        method: 'GET',
+        params: {
+          key: context.route.meta[0].key.substring(2)
+        }
+      }).then(res => res.data)
+    }
   },
   head() {
     return {

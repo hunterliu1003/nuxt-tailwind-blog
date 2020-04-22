@@ -9,7 +9,7 @@
     "build": "nuxt build --modern=server",
     "analyze": "nuxt build --modern=server --analyze",
     "start": "nuxt start --modern=server",
-    "generate": "nuxt generate --modern",
+    "generate": "cross-env BUILD_MODE=STATIC nuxt generate --modern",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
   "lint-staged": {
@@ -28,6 +28,7 @@
     "@nuxtjs/router": "^1.5.0",
     "@nuxtjs/sitemap": "^2.2.0",
     "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
     "escape-html": "^1.0.3",
     "gray-matter": "^4.0.2",
     "markdown-it-anchor": "^5.2.7",
