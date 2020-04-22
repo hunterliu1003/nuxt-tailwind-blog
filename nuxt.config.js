@@ -6,6 +6,9 @@ const postsRoutes = getRoutes('content', '/posts')
 export default {
   mode: 'universal',
   head: {
+    htmlAttrs: {
+      lang: 'zh-Hant-TW'
+    },
     title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
