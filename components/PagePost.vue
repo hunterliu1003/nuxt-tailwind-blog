@@ -1,19 +1,27 @@
 <template lang="pug">
   div(v-once)
     HHeader
-    HPost(:value="require('gray-matter')(require(`!!raw-loader!~/content/${$route.meta.key.substring(2)}`).default)")
+    nuxt-link.m-4(to='/') home
+    HPost(:value="{ content, data }")
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
+  asyncData(context) {
+    return axios({
+      url: process.env.BASE_URL + '/api',
+      method: 'GET',
+      params: {
+        key: context.route.meta[0].key.substring(2)
+      }
+    }).then(res => res.data)
+  },
   head() {
-    const post = require('gray-matter')(
-      require(`!!raw-loader!~/content/${this.$route.meta.key.substring(2)}`)
-        .default
-    )
     return {
-      title: post.data.metaTitle,
-      meta: post.data.meta
+      title: this.data.metaTitle,
+      meta: this.data.meta
     }
   }
 }

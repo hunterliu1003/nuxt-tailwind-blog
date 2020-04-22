@@ -20,6 +20,7 @@ export default {
   },
   loading: { color: '#fff' },
   css: [],
+  serverMiddleware: [{ path: '/api', handler: '@/serverMiddleware/api' }],
   optimization: {
     splitChunks: {
       cacheGroups: {
@@ -114,6 +115,9 @@ export default {
       ],
       '@/plugins/markdown-it/markdownItPrism'
     ]
+  },
+  env: {
+    BASE_URL: process.env.BASE_URL
   },
   robots: [
     {
