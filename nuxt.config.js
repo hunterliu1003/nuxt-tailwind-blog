@@ -37,9 +37,6 @@ export default {
       }
     }
   },
-  babel: {
-    presets: []
-  },
   render: {
     // generate 關閉 resourceHints
     resourceHints: process.env.BUILD_MODE !== 'STATIC',
@@ -63,7 +60,10 @@ export default {
           }
         }
       })
-    ]
+    ],
+    babel: {
+      presets: []
+    }
   },
   buildModules: [
     '@nuxtjs/eslint-module',
