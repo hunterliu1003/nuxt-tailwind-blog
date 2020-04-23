@@ -16,13 +16,12 @@ export default {
       )
       return { content, data }
     } else {
-      return context.$http
-        .$get(
-          `${
-            process.env.BASE_URL
-          }/api?key=${context.route.meta[0].key.substring(2)}`
-        )
-        .then(res => res)
+      return fetch(
+        `${process.env.BASE_URL}/api?key=${context.route.meta[0].key.substring(
+          2
+        )}`,
+        { method: 'GET' }
+      ).then(res => res.json())
     }
   },
   head() {
