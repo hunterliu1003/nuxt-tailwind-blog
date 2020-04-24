@@ -1,7 +1,7 @@
 <template lang="pug">
   div
     HHeader
-    nuxt-link.block.m-4(v-for='post in posts' :to="post") # {{ post }} 
+    nuxt-link.block.m-4(v-for='post in posts' :key='post' :to="post") # {{ post }} 
 </template>
 
 <script>
