@@ -17,9 +17,9 @@ export default {
       return { content, data }
     } else {
       return fetch(
-        `${process.env.BASE_URL}/api?key=${context.route.meta[0].key.substring(
-          2
-        )}`,
+        `${
+          process.env.BASE_URL
+        }/api/post?key=${context.route.meta[0].key.substring(2)}`,
         { method: 'GET' }
       ).then(res => res.json())
     }

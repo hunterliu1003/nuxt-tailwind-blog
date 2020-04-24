@@ -6,6 +6,7 @@
       "use": "@nuxtjs/now-builder",
       "config": {
         "serverFiles": [
+          "api/**",
           "serverMiddleware/**",
           "content/**",
           "utils/**",
