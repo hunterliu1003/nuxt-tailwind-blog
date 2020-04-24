@@ -4,6 +4,8 @@ import cheerio from 'cheerio'
 import { getRoutes } from './utils/routerGenerator'
 const postsRoutes = getRoutes('content', '/posts')
 
+require('dotenv').config()
+
 export default {
   mode: 'universal',
   head: {
@@ -68,6 +70,7 @@ export default {
   buildModules: [
     '@nuxtjs/eslint-module',
     '@nuxtjs/stylelint-module',
+    '@nuxtjs/gtm',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/router'
   ],
@@ -81,6 +84,9 @@ export default {
     '@nuxtjs/sitemap',
     'nuxt-compress' // nuxt-compress is a simple asset compression module for Gzip and Brotili
   ],
+  gtm: {
+    id: process.env.GTM_ID
+  },
   tailwindcss: {
     purgeCSSInDev: false
   },
@@ -95,9 +101,6 @@ export default {
   routerModule: {
     /* module options */
     keepDefaultRouter: true
-  },
-  env: {
-    BASE_URL: process.env.BASE_URL
   },
   robots: [
     {
