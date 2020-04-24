@@ -1,7 +1,6 @@
 <template lang="pug">
   div(v-once)
     HHeader
-    nuxt-link.m-4(to='/') home
     HPost(:value="{ content, data }")
 </template>
 
