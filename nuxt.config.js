@@ -102,6 +102,9 @@ export default {
     /* module options */
     keepDefaultRouter: true
   },
+  env: {
+    BASE_URL: process.env.BASE_URL
+  },
   robots: [
     {
       UserAgent: '*',
