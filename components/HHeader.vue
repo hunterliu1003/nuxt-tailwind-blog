@@ -1,14 +1,19 @@
 <template lang="pug">
-  nav.flex
-    nuxt-link(to='/').header-link Hunter Liu
+  .flex
+    h1
+      nuxt-link(to='/').header-link Hunter Liu
     .flex-grow
-    nuxt-link(to='/').header-link about me
-    nuxt-link(to='/').header-link articles
-    nuxt-link(to='/').header-link tags
+    nav.flex
+      h2
+        nuxt-link(to='/about').header-link 關於我
+      h2
+        nuxt-link(to='/posts').header-link 文章列表
+      h2
+        nuxt-link(to='/tags').header-link 標籤列表
 </template>
 
 <style scoped>
 .header-link {
-  @apply font-semibold text-xl tracking-tight px-6 py-2;
+  @apply text-xl tracking-tight px-6 py-2;
 }
 </style>

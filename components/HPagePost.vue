@@ -1,7 +1,5 @@
 <template lang="pug">
-  div(v-once)
-    HHeader
-    HPost(:value="{ content, data }")
+  HMarkdown(v-once :value='content')
 </template>
 
 <script>

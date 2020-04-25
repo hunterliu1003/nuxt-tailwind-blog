@@ -1,5 +1,3 @@
 <template lang="pug">
-  div
-    HHeader
-    nuxt
+  div tags
 </template>
