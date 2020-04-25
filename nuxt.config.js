@@ -108,12 +108,12 @@ export default {
   robots: [
     {
       UserAgent: '*',
-      Sitemap: 'https://nuxt-tailwind-blog.now.sh/sitemap.xml',
+      Sitemap: process.env.BASE_URL + '/sitemap.xml',
       Allow: '/'
     }
   ],
   sitemap: {
-    hostname: 'https://nuxt-tailwind-blog.now.sh',
+    hostname: process.env.BASE_URL,
     routes: postsRoutes
   },
   generate: {
