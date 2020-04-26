@@ -6,10 +6,10 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build --modern=server",
-    "analyze": "nuxt build --modern=server --analyze",
-    "start": "nuxt start --modern=server",
-    "generate": "cross-env BUILD_MODE=STATIC nuxt generate --modern",
+    "build": "nuxt build",
+    "analyze": "nuxt build --analyze",
+    "start": "nuxt start",
+    "generate": "cross-env BUILD_MODE=STATIC nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
   "lint-staged": {

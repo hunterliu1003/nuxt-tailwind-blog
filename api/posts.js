@@ -1,14 +1,13 @@
-const fs = require('fs')
-const path = require('path')
+const { allFiles } = require('../utils/files')
 
 module.exports = function (req, res, next) {
   if (req.method === 'GET') {
-    const getAllFiles = dir =>
-      fs.readdirSync(dir).reduce((files, file) => {
-        const name = path.join(dir, file)
-        const isDirectory = fs.statSync(name).isDirectory()
-        return isDirectory ? [...files, ...getAllFiles(name)] : [...files, name]
-      }, [])
-    res.end(JSON.stringify({ posts: getAllFiles('./content/') }))
+    res.end(
+      JSON.stringify({
+        posts: allFiles.map(file =>
+          file.name.replace('content', 'posts').replace(/\.[^/.]+$/, '')
+        )
+      })
+    )
   }
 }

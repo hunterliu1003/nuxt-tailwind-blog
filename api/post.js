@@ -1,13 +1,13 @@
-const fs = require('fs')
 const querystring = require('querystring')
-const pageParser = require('../plugins/pageParser')
+const { allFiles } = require('../utils/files')
 
 module.exports = function (req, res, next) {
   if (req.method === 'GET') {
-    const file = fs.readFileSync(
-      `./content/${querystring.parse(req._parsedOriginalUrl.query).key}`,
-      'utf8'
+    const file = allFiles.find(
+      file =>
+        file.name ===
+        'content/' + querystring.parse(req._parsedOriginalUrl.query).key + '.md'
     )
-    res.end(JSON.stringify(pageParser(file)))
+    res.end(JSON.stringify(file))
   }
 }
