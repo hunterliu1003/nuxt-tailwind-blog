@@ -20,4 +20,11 @@ const postsRoutes = posts.map(file =>
   file.name.replace('content', 'posts').replace(/\.[^/.]+$/, '')
 )
 
-module.exports = { posts, postsRoutes }
+const tags = posts.reduce((acc, cur) => {
+  ;(cur.data.tags || []).forEach(tag => {
+    acc[tag] = (acc[tag] || 0) + 1
+  })
+  return acc
+}, {})
+
+module.exports = { posts, postsRoutes, tags }
