@@ -1,6 +1,6 @@
 const fs = require('fs')
 const path = require('path')
-const pageParser = require('../plugins/pageParser')
+const pageParser = require('./pageParser')
 
 const getAllFiles = dir =>
   fs.readdirSync(dir).reduce((files, file) => {

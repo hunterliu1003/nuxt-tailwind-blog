@@ -1,7 +1,7 @@
-import prism from 'prismjs'
-import 'prismjs/components/prism-markup'
-import 'prismjs/components/prism-json'
-import escapeHtml from 'escape-html'
+const escapeHtml = require('escape-html')
+const prism = require('prismjs')
+require('prismjs/components/prism-markup')
+require('prismjs/components/prism-json')
 
 function wrap(code, lang) {
   if (lang === 'text') {
@@ -25,4 +25,4 @@ const highlightjs = md => {
   md.options.highlight = highlight
 }
 
-export default highlightjs
+module.exports = highlightjs

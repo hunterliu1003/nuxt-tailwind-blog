@@ -3,8 +3,7 @@ const MarkdownIt = require('markdown-it')
 const makdownItAttrs = require('markdown-it-attrs')
 const markdownItPlayground = require('markdown-it-playground')
 const markdownItAnchor = require('markdown-it-anchor')
-const markdownItPrism = require('../plugins/markdown-it/markdownItPrism')
-  .default
+const markdownItPrism = require('./markdown-it/markdownItPrism')
 
 const md = new MarkdownIt({
   html: true,
