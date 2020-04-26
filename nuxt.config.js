@@ -1,7 +1,7 @@
 import shrinkRay from 'shrink-ray-current'
 import VueAutomaticImportPlugin from 'vue-automatic-import-loader/lib/plugin'
 import cheerio from 'cheerio'
-import { postsRoutes } from './utils/posts'
+import { allRoutes } from './utils/posts'
 
 require('dotenv').config()
 
@@ -113,10 +113,10 @@ export default {
   ],
   sitemap: {
     hostname: process.env.BASE_URL,
-    routes: postsRoutes
+    routes: allRoutes
   },
   generate: {
-    routes: postsRoutes
+    routes: allRoutes
   },
   hooks: {
     'generate:page': page => {

@@ -10,25 +10,35 @@ const getPosts = dir =>
       ? [...files, ...getPosts(name)]
       : [
           ...files,
-          { name, ...markdownParser(fs.readFileSync('./' + name, 'utf8')) }
+          {
+            routePath: name
+              .replace('content', '/posts')
+              .replace(/\.[^/.]+$/, ''),
+            path: name.replace('content/', '').replace(/\.[^/.]+$/, ''),
+            ...markdownParser(fs.readFileSync('./' + name, 'utf8'))
+          }
         ]
   }, [])
 
 const posts = getPosts('./content/')
 
-const postsRoutes = posts.map(post =>
-  post.name.replace('content', '/posts').replace(/\.[^/.]+$/, '')
-)
+const postsRoutes = posts.map(post => post.routePath)
 
-const tags = posts.reduce((acc, cur) => {
+const tagsCount = posts.reduce((acc, cur) => {
   ;(cur.data.tags || []).forEach(tag => {
     acc[tag] = (acc[tag] || 0) + 1
   })
   return acc
 }, {})
 
+const tagsRoutes = Object.keys(tagsCount).map(tag => `/tags/${tag}`)
+
+const allRoutes = [...postsRoutes, ...tagsRoutes]
+
 module.exports = {
   posts,
   postsRoutes,
-  tags
+  tagsCount,
+  tagsRoutes,
+  allRoutes
 }

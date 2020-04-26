@@ -9,9 +9,7 @@ module.exports = function (req, res, next) {
           querystring.parse(req._parsedOriginalUrl.query).tag
         )
       })
-      .map(post =>
-        post.name.replace('content', '/posts').replace(/\.[^/.]+$/, '')
-      )
+      .map(post => post.routePath)
     res.end(JSON.stringify({ tags: tagsRoutes }))
   }
 }
