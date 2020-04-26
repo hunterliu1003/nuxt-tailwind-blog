@@ -1,4 +1,4 @@
-const querystring = require('querystring')
+const { parse } = require('querystring')
 const { posts } = require('../utils/posts')
 
 module.exports = function (req, res, next) {
@@ -6,7 +6,7 @@ module.exports = function (req, res, next) {
     const tagsRoutes = posts
       .filter(post => {
         return (post.data.tags || []).includes(
-          querystring.parse(req._parsedOriginalUrl.query).tag
+          parse(req._parsedOriginalUrl.query).tag
         )
       })
       .map(post => post.routePath)
