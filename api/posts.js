@@ -5,7 +5,7 @@ module.exports = function (req, res, next) {
     res.end(
       JSON.stringify({
         posts: posts.map(post =>
-          post.name.replace('content', 'posts').replace(/\.[^/.]+$/, '')
+          post.name.replace('content', '/posts').replace(/\.[^/.]+$/, '')
         )
       })
     )
