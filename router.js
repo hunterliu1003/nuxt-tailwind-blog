@@ -29,7 +29,7 @@ export function createRouter() {
       },
       {
         path: '/posts/*',
-        name: 'posts',
+        name: 'post',
         component: () =>
           import('~/components/HPagePost').then(m => m.default || m)
       }

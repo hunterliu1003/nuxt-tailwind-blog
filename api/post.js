@@ -1,13 +1,13 @@
 const querystring = require('querystring')
-const { allFiles } = require('../utils/files')
+const { posts } = require('../utils/posts')
 
 module.exports = function (req, res, next) {
   if (req.method === 'GET') {
-    const file = allFiles.find(
-      file =>
-        file.name ===
+    const post = posts.find(
+      post =>
+        post.name ===
         'content/' + querystring.parse(req._parsedOriginalUrl.query).key + '.md'
     )
-    res.end(JSON.stringify(file))
+    res.end(JSON.stringify(post))
   }
 }

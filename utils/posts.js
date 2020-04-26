@@ -1,23 +1,23 @@
 const fs = require('fs')
 const path = require('path')
-const pageParser = require('./pageParser')
+const markdownParser = require('./markdownParser')
 
-const getAllFiles = dir =>
+const getPosts = dir =>
   fs.readdirSync(dir).reduce((files, file) => {
     const name = path.join(dir, file)
     const isDirectory = fs.statSync(name).isDirectory()
     return isDirectory
-      ? [...files, ...getAllFiles(name)]
+      ? [...files, ...getPosts(name)]
       : [
           ...files,
-          { name, ...pageParser(fs.readFileSync('./' + name, 'utf8')) }
+          { name, ...markdownParser(fs.readFileSync('./' + name, 'utf8')) }
         ]
   }, [])
 
-const allFiles = getAllFiles('./content/')
+const posts = getPosts('./content/')
 
-const postsRoutes = allFiles.map(file =>
+const postsRoutes = posts.map(file =>
   file.name.replace('content', 'posts').replace(/\.[^/.]+$/, '')
 )
 
-module.exports = { allFiles, postsRoutes }
+module.exports = { posts, postsRoutes }

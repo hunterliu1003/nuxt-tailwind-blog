@@ -1,7 +1,7 @@
 import shrinkRay from 'shrink-ray-current'
 import VueAutomaticImportPlugin from 'vue-automatic-import-loader/lib/plugin'
 import cheerio from 'cheerio'
-import { postsRoutes } from './utils/files'
+import { postsRoutes } from './utils/posts'
 
 require('dotenv').config()
 
