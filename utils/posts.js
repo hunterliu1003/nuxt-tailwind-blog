@@ -16,8 +16,8 @@ const getPosts = dir =>
 
 const posts = getPosts('./content/')
 
-const postsRoutes = posts.map(file =>
-  file.name.replace('content', 'posts').replace(/\.[^/.]+$/, '')
+const postsRoutes = posts.map(post =>
+  post.name.replace('content', '/posts').replace(/\.[^/.]+$/, '')
 )
 
 const tags = posts.reduce((acc, cur) => {
@@ -27,4 +27,8 @@ const tags = posts.reduce((acc, cur) => {
   return acc
 }, {})
 
-module.exports = { posts, postsRoutes, tags }
+module.exports = {
+  posts,
+  postsRoutes,
+  tags
+}
