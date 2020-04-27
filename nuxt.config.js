@@ -82,6 +82,7 @@ export default {
       push: true
     }
   },
+  plugins: ['~/plugins/fetch.js'],
   watch: ['~/content/**'],
   build: {
     extractCSS: true,

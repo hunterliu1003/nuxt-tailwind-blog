@@ -8,12 +8,7 @@
 <script>
 export default {
   asyncData(context) {
-    return fetch(
-      `${process.env.BASE_URL}/api/tag?tag=${context.route.params.tag}`,
-      {
-        method: 'GET'
-      }
-    ).then(res => res.json())
+    return context.app.$fetch(`/api/tag?tag=${context.route.params.tag}`)
   }
 }
 </script>

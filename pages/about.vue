@@ -5,9 +5,7 @@
 <script>
 export default {
   asyncData(context) {
-    return fetch(`${process.env.BASE_URL}/api/content?path=about`, {
-      method: 'GET'
-    }).then(res => res.json())
+    return context.app.$fetch('/api/content?path=about')
   },
   head() {
     return {

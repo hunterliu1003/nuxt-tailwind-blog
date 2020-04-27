@@ -5,10 +5,9 @@
 <script>
 export default {
   asyncData(context) {
-    return fetch(
-      `${process.env.BASE_URL}/api/content?path=posts/${context.route.params.pathMatch}`,
-      { method: 'GET' }
-    ).then(res => res.json())
+    return context.app.$fetch(
+      `/api/content?path=posts/${context.route.params.pathMatch}`
+    )
   },
   head() {
     return {

@@ -9,9 +9,7 @@
 <script>
 export default {
   asyncData(context) {
-    return fetch(`${process.env.BASE_URL}/api/tags`, {
-      method: 'GET'
-    }).then(res => res.json())
+    return context.app.$fetch('/api/tags')
   }
 }
 </script>
