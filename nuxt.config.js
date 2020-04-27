@@ -11,14 +11,44 @@ export default {
     htmlAttrs: {
       lang: 'zh-Hant-TW'
     },
-    title: process.env.npm_package_name || '',
+    titleTemplate: titleChunk => {
+      return titleChunk ? `${titleChunk} | Hunterliu` : `Hunterliu`
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
+        content:
+          '我不是獵頭，但我叫 Hunter，是個前端工程師，熱愛研究和分享技術，歡迎交流'
+      },
+      {
+        itemprop: 'name',
+        content: 'HunterLiu'
+      },
+      {
+        itemprop: 'description',
+        content:
+          '我不是獵頭，但我叫 Hunter，是個前端工程師，熱愛研究和分享技術，歡迎交流'
+      },
+      {
+        property: 'og:title',
+        content: 'HunterLiu'
+      },
+      {
+        property: 'og:description',
+        content:
+          '我不是獵頭，但我叫 Hunter，是個前端工程師，熱愛研究和分享技術，歡迎交流'
+      },
+      {
+        property: 'og:site_name',
+        content:
+          '我不是獵頭，但我叫 Hunter，是個前端工程師，熱愛研究和分享技術，歡迎交流'
+      },
+      {
+        property: 'og:type',
+        content: 'article'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]

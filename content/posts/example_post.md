@@ -3,7 +3,7 @@ title: This is an article
 lang: en-US
 description: 'some description'
 layout: 'default'
-metaTitle: 'pageTitle | HunterLiu Blog'
+metaTitle: 'pageTitle'
 meta: [
   {
     hid: description,
