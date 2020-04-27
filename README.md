@@ -2,6 +2,20 @@
 
 > My splendiferous Nuxt.js project
 
+## Settings
+
+create `.env` file at root directory first.
+
+```
+BASE_URL=http://localhost:3000
+GTM_ID=GTM-XXX
+GOOGLE_SITE_VERIFICATION=XXXXXXXXXXXXXXXXXXXXX
+```
+
+## Nuxt Generate Mode
+
+> you should run nuxt server `yarn start` before `yarn generate`
+
 ## Build Setup
 
 ```bash
@@ -18,5 +32,3 @@ $ yarn start
 # generate static project
 $ yarn generate
 ```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
