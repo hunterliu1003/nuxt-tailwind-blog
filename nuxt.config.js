@@ -78,6 +78,7 @@ export default {
       push: true
     }
   },
+  watch: ['~/content/**'],
   build: {
     extractCSS: true,
     plugins: [

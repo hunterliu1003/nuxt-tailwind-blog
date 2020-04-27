@@ -6,7 +6,7 @@
 export default {
   asyncData(context) {
     return fetch(
-      `${process.env.BASE_URL}/api/post?key=${context.route.params.pathMatch}`,
+      `${process.env.BASE_URL}/api/content?path=posts/${context.route.params.pathMatch}`,
       { method: 'GET' }
     ).then(res => res.json())
   },
