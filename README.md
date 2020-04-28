@@ -52,3 +52,15 @@ $ yarn generate
 
 ## [Demo](https://hunterliu.now.sh)
 
+## Deployment
+
+You can easily deploy this project by using [**Vercel**](https://vercel.com) (It was called **Zeit** before)
+
+```bash
+# deploy preview application
+$ now
+# deploy to production
+$ now --prod
+```
+
+You have to set the environment variables in your Vercel project
