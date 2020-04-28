@@ -1,9 +1,5 @@
 ---
 title: This is an article
-lang: en-US
-description: 'some description'
-layout: 'default'
-metaTitle: 'pageTitle'
 meta: [
   {
     hid: description,
@@ -19,7 +15,7 @@ tags: ['vue', 'tailwindcss', 'markdown-it']
 date: '2020-04-14'
 ---
 
-# Hello World!! {{ class="ml-10" }}
+# Hello World!!
 
 ## Hello World!!
 

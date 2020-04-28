@@ -11,7 +11,7 @@ export default {
   },
   head() {
     return {
-      title: this.data.metaTitle,
+      title: this.data.title,
       meta: this.data.meta
     }
   }

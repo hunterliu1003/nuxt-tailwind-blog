@@ -1,9 +1,5 @@
 ---
 title: This is an article
-lang: en-US
-description: 'some description'
-layout: 'default'
-metaTitle: 'pageTitle'
 meta: [
   {
     hid: description,
@@ -42,5 +38,9 @@ date: '2020-04-14'
 123
 
 ```js
+const a = 123
+```
+
+```
 const a = 123
 ```
