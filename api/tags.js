@@ -1,7 +1,7 @@
-const { tagsCount } = require('../utils/posts')
+const { getTagsCount } = require('../utils/content')
 
 module.exports = function (req, res, next) {
   if (req.method === 'GET') {
-    res.end(JSON.stringify({ tagsCount }))
+    res.end(JSON.stringify({ tagsCount: getTagsCount() }))
   }
 }

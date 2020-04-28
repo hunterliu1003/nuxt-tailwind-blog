@@ -1,9 +1,9 @@
 const { parse } = require('querystring')
-const { content } = require('../utils/posts')
+const { getContent } = require('../utils/content')
 
 module.exports = function (req, res, next) {
   if (req.method === 'GET') {
-    const pageContent = content.find(
+    const pageContent = getContent().find(
       pageContent =>
         pageContent.path === parse(req._parsedOriginalUrl.query).path
     )

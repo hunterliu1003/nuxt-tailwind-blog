@@ -1,7 +1,7 @@
 import shrinkRay from 'shrink-ray-current'
 import VueAutomaticImportPlugin from 'vue-automatic-import-loader/lib/plugin'
 import cheerio from 'cheerio'
-import { allRoutes } from './utils/posts'
+import { getAllRoutes } from './utils/content'
 
 require('dotenv').config()
 
@@ -83,7 +83,6 @@ export default {
     }
   },
   plugins: ['~/plugins/fetch.js'],
-  watch: ['~/content/**'],
   build: {
     extractCSS: true,
     plugins: [
@@ -149,10 +148,10 @@ export default {
   ],
   sitemap: {
     hostname: process.env.BASE_URL,
-    routes: allRoutes
+    routes: getAllRoutes()
   },
   generate: {
-    routes: allRoutes
+    routes: getAllRoutes()
   },
   hooks: {
     'generate:page': page => {
