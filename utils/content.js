@@ -6,16 +6,20 @@ const getMdFiles = dir =>
   fs.readdirSync(dir).reduce((files, file) => {
     const name = path.join(dir, file)
     const isDirectory = fs.statSync(name).isDirectory()
-    return isDirectory
-      ? [...files, ...getMdFiles(name)]
-      : [
-          ...files,
-          {
-            routePath: name.replace('content', '').replace(/\.[^/.]+$/, ''),
-            path: name.replace('content/', '').replace(/\.[^/.]+$/, ''),
-            ...markdownParser(fs.readFileSync('./' + name, 'utf8'))
-          }
-        ]
+    if (isDirectory) {
+      return [...files, ...getMdFiles(name)]
+    } else {
+      const mdObject = markdownParser(fs.readFileSync('./' + name, 'utf8'))
+      return [
+        ...files,
+        {
+          routePath: name.replace('content', '').replace(/\.[^/.]+$/, ''),
+          path: name.replace('content/', '').replace(/\.[^/.]+$/, ''),
+          ...mdObject,
+          timestamp: new Date(mdObject.data.date || null).getTime()
+        }
+      ]
+    }
   }, [])
 
 const content = getMdFiles('./content')
@@ -26,15 +30,13 @@ const getContent = () =>
 const getPosts = () =>
   getContent()
     .filter(page => page.path.startsWith('posts/'))
-    .map(post => {
-      return {
-        ...post,
-        timestamp: new Date(post.data.date || null).getTime()
-      }
-    })
-    .sort((a, b) => {
-      return a.timestamp > b.timestamp ? -1 : 1
-    })
+    .sort((a, b) => (a.timestamp > b.timestamp ? -1 : 1))
+    .map((post, index, posts) => ({
+      ...post,
+      prevPostPath: index - 1 >= 0 ? posts[index - 1].routePath : false,
+      nextPostPath:
+        index + 1 < posts.length ? posts[index + 1].routePath : false
+    }))
 
 const getPostsRoutes = () => getPosts().map(post => post.routePath)
 
