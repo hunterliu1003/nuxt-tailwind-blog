@@ -56,6 +56,11 @@ const getPostsByTag = tag =>
     .filter(post => (post.data.tags || []).includes(tag))
     .map(post => post.routePath)
 
+const getRecentPostsRoutes = post =>
+  getPostsRoutes()
+    .filter(routePath => routePath !== post.routePath)
+    .slice(0, 3)
+
 const getAllRoutes = () => [...getPostsRoutes(), ...getTagsRoutes()]
 
 module.exports = {
@@ -66,5 +71,6 @@ module.exports = {
   getTagsCount,
   getTagsRoutes,
   getPostsByTag,
+  getRecentPostsRoutes,
   getAllRoutes
 }
