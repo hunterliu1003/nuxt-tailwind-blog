@@ -6,7 +6,7 @@
 export default {
   asyncData(context) {
     return context.app.$fetch(
-      `/api/content?path=posts/${context.route.params.pathMatch}`
+      `/api/post?path=posts/${context.route.params.pathMatch}`
     )
   },
   head() {

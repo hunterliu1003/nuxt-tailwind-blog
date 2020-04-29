@@ -1,5 +1,6 @@
 const content = require('../api/content')
 const posts = require('../api/posts')
+const post = require('../api/post')
 const tags = require('../api/tags')
 const tag = require('../api/tag')
 
@@ -10,6 +11,9 @@ module.exports = function (req, res, next) {
       break
     case '/api/posts':
       posts(req, res, next)
+      break
+    case '/api/post':
+      post(req, res, next)
       break
     case '/api/tags':
       tags(req, res, next)
