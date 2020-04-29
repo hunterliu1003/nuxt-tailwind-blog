@@ -1,21 +1,13 @@
 ---
 title: This is an article
-meta: [
-  {
-    hid: description,
-    name: description,
-    content: hello
-  },
-  {
-    name: keywords,
-    content: super duper SEO
-  }
-]
+meta:
+  [
+    { hid: description, name: description, content: hello },
+    { name: keywords, content: super duper SEO },
+  ]
 tags: ['vue', 'tailwindcss', 'markdown-it']
-date: '2020-04-14'
+date: '2020-04-24'
 ---
-
-# Hello World!!
 
 ## Hello World!!
 
