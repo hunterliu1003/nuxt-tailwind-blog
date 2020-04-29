@@ -57,7 +57,7 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
-  loading: { color: '#fff' },
+  loading: false,
   css: ['prismjs/themes/prism-tomorrow.css'],
   serverMiddleware: [{ path: '/api', handler: '@/serverMiddleware/api' }],
   optimization: {
