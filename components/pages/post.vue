@@ -1,9 +1,21 @@
 <template lang="pug">
-  HMarkdown(v-once :value='content')
+  div.max-w-3xl.mx-auto
+    h1 {{ post.data.title }}
+    HTags(:tags="post.data.tags")
+    HMarkdown(v-once :value="post.content")
+    HTags(:tags="post.data.tags")
+    .flex.justify-between
+      nuxt-link(to="/" :class="{ 'text-red-500': !post.prevPostPath}" :disabled="!post.prevPostPath" :to="post.prevPostPath || ''") << post name
+      nuxt-link(to="/" :class="{ 'text-red-500': !post.nextPostPath}" :disabled="!post.nextPostPath" :to="post.nextPostPath || ''") post name >>
+    //- vue-discus component
+    h2.mt-4 近期發文
+    nuxt-link.block(:to="recentPostPath" v-for="recentPostPath in recentPostsRoutes" :key="recentPostPath") {{ recentPostPath }} with Date
+    //- ads
 </template>
 
 <script>
 export default {
+  name: 'Post',
   asyncData(context) {
     return context.app.$fetch(
       `/api/post?path=posts/${context.route.params.pathMatch}`
@@ -11,8 +23,8 @@ export default {
   },
   head() {
     return {
-      title: this.data.title,
-      meta: this.data.meta
+      title: this.post.data.title,
+      meta: this.post.data.meta
     }
   }
 }
