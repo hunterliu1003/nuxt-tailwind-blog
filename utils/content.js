@@ -24,7 +24,17 @@ const getContent = () =>
   process.env.NODE_ENV === 'production' ? content : getMdFiles('./content')
 
 const getPosts = () =>
-  getContent().filter(page => page.path.startsWith('posts/'))
+  getContent()
+    .filter(page => page.path.startsWith('posts/'))
+    .map(post => {
+      return {
+        ...post,
+        timestamp: new Date(post.data.date || null).getTime()
+      }
+    })
+    .sort((a, b) => {
+      return a.timestamp > b.timestamp ? -1 : 1
+    })
 
 const getPostsRoutes = () => getPosts().map(post => post.routePath)
 
