@@ -18,7 +18,10 @@ const getMdFiles = dir =>
         ]
   }, [])
 
-const getContent = () => getMdFiles('./content')
+const content = getMdFiles('./content')
+
+const getContent = () =>
+  process.env.NODE_ENV === 'production' ? content : getMdFiles('./content')
 
 const getPosts = () =>
   getContent().filter(page => page.path.startsWith('posts/'))
