@@ -1,8 +1,8 @@
 <template lang="pug">
   div 
     h1 標籤列表
-    h2(v-for='(tag, tagName) in tagsCount') 
-      nuxt-link(:to='`tags/${tagName}`') {{ tagName }} : {{ tag }}
+    h2(v-for="(tag, tagName) in tagsCount") 
+      nuxt-link(:to="`tags/${tagName}`") {{ tagName }} : {{ tag }}
 
 </template>
 
