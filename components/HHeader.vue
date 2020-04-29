@@ -14,6 +14,6 @@
 
 <style scoped>
 .header-link {
-  @apply text-xl tracking-tight px-6 py-2;
+  @apply block text-xl tracking-tight px-6 py-2;
 }
 </style>
