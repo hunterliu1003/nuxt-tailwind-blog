@@ -13,6 +13,7 @@ const getMdFiles = dir =>
       return [
         ...files,
         {
+          name,
           routePath: name.replace('content', '').replace(/\.[^/.]+$/, ''),
           path: name.replace('content/', '').replace(/\.[^/.]+$/, ''),
           ...mdObject,
