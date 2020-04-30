@@ -15,6 +15,12 @@
       a.header-link(href="https://github.com/hunterliu1003" target="_blank") Github
 </template>
 
+<script>
+export default {
+  name: 'HHeader'
+}
+</script>
+
 <style scoped>
 .header-link {
   @apply block text-xl tracking-tight px-6 py-2;

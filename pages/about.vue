@@ -1,9 +1,10 @@
 <template lang="pug">
-  HMarkdown(v-once :value="content")
+  HMarkdown.max-w-3xl.mx-auto(v-once :value="content")
 </template>
 
 <script>
 export default {
+  name: 'PageAbout',
   asyncData(context) {
     return context.app.$fetch('/api/content?path=about')
   },

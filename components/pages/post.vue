@@ -9,17 +9,16 @@
       nuxt-link(to="/" :class="{ 'text-red-500': !post.nextPostPath}" :disabled="!post.nextPostPath" :to="post.nextPostPath || ''") post name >>
     //- vue-discus component
     h2.mt-4 近期發文
-    nuxt-link.block(:to="recentPostPath" v-for="recentPostPath in recentPostsRoutes" :key="recentPostPath") {{ recentPostPath }} with Date
+    h3
+      nuxt-link.block(:to="recentPostPath" v-for="recentPostPath in recentPostsRoutes" :key="recentPostPath") {{ recentPostPath }} should be post name with Date
     //- ads
 </template>
 
 <script>
 export default {
-  name: 'Post',
+  name: 'PagePost',
   asyncData(context) {
-    return context.app.$fetch(
-      `/api/post?path=posts/${context.route.params.pathMatch}`
-    )
+    return context.app.$fetch(`/api/post?path=posts/${context.route.params.pathMatch}`)
   },
   head() {
     return {

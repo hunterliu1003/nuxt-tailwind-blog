@@ -4,6 +4,7 @@
 
 <script>
 export default {
+  name: 'HMarkdown',
   props: {
     value: {
       type: String,

@@ -1,10 +1,11 @@
 <template lang="pug">
-  div
+  .max-w-3xl.mx-auto
     nuxt-link.block.m-4(v-for="post in postsRoutes" :key="post" :to="post") # {{ post }} 
 </template>
 
 <script>
 export default {
+  name: 'PagePosts',
   asyncData(context) {
     return context.app.$fetch('/api/posts')
   }
