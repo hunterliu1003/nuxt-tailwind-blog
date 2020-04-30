@@ -7,7 +7,7 @@
 export default {
   name: 'PagePosts',
   asyncData(context) {
-    return context.app.$fetch('/api/posts')
+    return Object.freeze(context.app.$fetch('/api/posts'))
   }
 }
 </script>

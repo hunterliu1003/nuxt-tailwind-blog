@@ -18,7 +18,7 @@
 export default {
   name: 'PagePost',
   asyncData(context) {
-    return context.app.$fetch(`/api/post?path=posts/${context.route.params.pathMatch}`)
+    return Object.freeze(context.app.$fetch(`/api/post?path=posts/${context.route.params.pathMatch}`))
   },
   head() {
     return {

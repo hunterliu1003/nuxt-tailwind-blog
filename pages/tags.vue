@@ -10,7 +10,7 @@
 export default {
   name: 'PageTags',
   asyncData(context) {
-    return context.app.$fetch('/api/tags')
+    return Object.freeze(context.app.$fetch('/api/tags'))
   }
 }
 </script>
