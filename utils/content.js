@@ -24,8 +24,7 @@ const getMdFiles = dir =>
 
 const content = getMdFiles('./content')
 
-const getContent = () =>
-  process.env.NODE_ENV === 'production' ? content : getMdFiles('./content')
+const getContent = () => (process.env.NODE_ENV === 'production' ? content : getMdFiles('./content'))
 
 const getPosts = () =>
   getContent()
@@ -34,8 +33,7 @@ const getPosts = () =>
     .map((post, index, posts) => ({
       ...post,
       prevPostPath: index - 1 >= 0 ? posts[index - 1].routePath : false,
-      nextPostPath:
-        index + 1 < posts.length ? posts[index + 1].routePath : false
+      nextPostPath: index + 1 < posts.length ? posts[index + 1].routePath : false
     }))
 
 const getPostsRoutes = () => getPosts().map(post => post.routePath)
@@ -48,8 +46,7 @@ const getTagsCount = () =>
     return acc
   }, {})
 
-const getTagsRoutes = () =>
-  Object.keys(getTagsCount()).map(tag => `/tags/${tag}`)
+const getTagsRoutes = () => Object.keys(getTagsCount()).map(tag => `/tags/${tag}`)
 
 const getPostsByTag = tag =>
   getPosts()
