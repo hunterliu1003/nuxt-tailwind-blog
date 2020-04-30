@@ -14,47 +14,21 @@ export default {
     titleTemplate: titleChunk => {
       return titleChunk ? `${titleChunk} | Hunterliu` : `Hunterliu`
     },
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      {
-        name: 'google-site-verification',
-        content: process.env.GOOGLE_SITE_VERIFICATION
-      },
-      {
-        hid: 'description',
-        name: 'description',
-        content:
-          '我不是獵頭，但我叫 Hunter，是個前端工程師，熱愛研究和分享技術，歡迎交流'
-      },
-      {
-        itemprop: 'name',
-        content: 'HunterLiu'
-      },
-      {
-        itemprop: 'description',
-        content:
-          '我不是獵頭，但我叫 Hunter，是個前端工程師，熱愛研究和分享技術，歡迎交流'
-      },
-      {
-        property: 'og:title',
-        content: 'HunterLiu'
-      },
-      {
-        property: 'og:description',
-        content:
-          '我不是獵頭，但我叫 Hunter，是個前端工程師，熱愛研究和分享技術，歡迎交流'
-      },
-      {
-        property: 'og:site_name',
-        content:
-          '我不是獵頭，但我叫 Hunter，是個前端工程師，熱愛研究和分享技術，歡迎交流'
-      },
-      {
-        property: 'og:type',
-        content: 'article'
-      }
-    ],
+    meta: (() => {
+      const descriptionContent = '我不是獵頭，但我叫 Hunter，是個前端工程師，熱愛研究和分享技術，歡迎交流'
+      return [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'google-site-verification', content: process.env.GOOGLE_SITE_VERIFICATION },
+        { hid: 'description', name: 'description', content: descriptionContent },
+        { itemprop: 'name', content: 'HunterLiu' },
+        { itemprop: 'description', content: descriptionContent },
+        { property: 'og:title', content: 'HunterLiu' },
+        { property: 'og:description', content: descriptionContent },
+        { property: 'og:site_name', content: descriptionContent },
+        { property: 'og:type', content: 'article' }
+      ]
+    })(),
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   loading: false,
@@ -89,10 +63,7 @@ export default {
       new VueAutomaticImportPlugin({
         match(originalTag, { kebabTag, camelTag, path, component }) {
           if (kebabTag.startsWith('h-')) {
-            return [
-              camelTag,
-              `import ${camelTag} from '@/components/${camelTag}.vue'`
-            ]
+            return [camelTag, `import ${camelTag} from '@/components/${camelTag}.vue'`]
           }
         }
       })
