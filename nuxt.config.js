@@ -6,6 +6,9 @@ import { getAllRoutes } from './utils/content'
 require('dotenv').config()
 
 export default {
+  server: {
+    host: '0.0.0.0'
+  },
   mode: 'universal',
   head: {
     htmlAttrs: {
