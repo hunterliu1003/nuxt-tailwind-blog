@@ -1,7 +1,7 @@
 <template lang="pug">
   div
     HHeader
-    nuxt.px-4.md_px-0
+    nuxt.max-w-3xl.px-4.md_px-0.mx-auto
 </template>
 
 <script>

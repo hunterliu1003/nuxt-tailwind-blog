@@ -1,5 +1,5 @@
 <template lang="pug">
-  main.max-w-3xl.mx-auto
+  main
     nuxt-link.block.m-4(v-for="post in postsRoutes" :key="post" :to="post") # {{ post }} 
 </template>
 
