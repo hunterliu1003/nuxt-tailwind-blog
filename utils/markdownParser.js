@@ -3,6 +3,8 @@ const MarkdownIt = require('markdown-it')
 const makdownItAttrs = require('markdown-it-attrs')
 const markdownItPlayground = require('markdown-it-playground')
 const markdownItAnchor = require('markdown-it-anchor')
+const uslug = require('uslug')
+const uslugify = s => uslug(s, { lower: false })
 const markdownItPrism = require('./markdown-it/markdownItPrism')
 
 const md = new MarkdownIt({
@@ -18,6 +20,7 @@ md.use(makdownItAttrs, {
 })
   .use(markdownItPlayground)
   .use(markdownItAnchor, {
+    slugify: uslugify,
     level: 1,
     permalink: true,
     permalinkClass: 'md-anchor',
