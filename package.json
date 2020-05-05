@@ -37,6 +37,7 @@
     "node-zopfli-es": "^1.0.4",
     "nuxt": "2.12.2",
     "nuxt-compress": "^1.1.0",
+    "nuxt-jsonld": "^1.4.9",
     "prismjs": "^1.20.0",
     "shrink-ray-current": "^4.1.2",
     "uslug": "^1.0.4",

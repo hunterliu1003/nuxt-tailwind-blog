@@ -59,7 +59,7 @@ export default {
       push: true
     }
   },
-  plugins: ['~/plugins/fetch.js'],
+  plugins: ['~/plugins/fetch.js', '~/plugins/jsonld'],
   build: {
     extractCSS: true,
     plugins: [

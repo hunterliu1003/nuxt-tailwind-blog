@@ -6816,6 +6816,11 @@ nuxt-compress@^1.1.0:
     brotli-webpack-plugin "^1.1.0"
     compression-webpack-plugin "^3.1.0"
 
+nuxt-jsonld@^1.4.9:
+  version "1.4.9"
+  resolved "https://registry.yarnpkg.com/nuxt-jsonld/-/nuxt-jsonld-1.4.9.tgz#6e99b816f8f979c23a92aaf7858a19d7a2777a20"
+  integrity sha512-vQiVm9XH+g1uyeECQJiu4dFyjCB50n2qqS7DMFsY6whHW2iIl4y6kGqvqkDUg5/c3dy4aZT03nZYO00gAHaA4A==
+
 nuxt-purgecss@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/nuxt-purgecss/-/nuxt-purgecss-0.2.1.tgz#5cabb515beaff96cfb833b3ce13caecec953daca"
