@@ -23,6 +23,14 @@ const getMdFiles = dir =>
     }
   }, [])
 
+const getPostLinkInfo = ({ name, routePath, path, data, timestamp }) => ({
+  name,
+  routePath,
+  path,
+  data,
+  timestamp
+})
+
 const content = getMdFiles('./content')
 
 const getContent = () => (process.env.NODE_ENV === 'production' ? content : getMdFiles('./content'))
@@ -33,11 +41,11 @@ const getPosts = () =>
     .sort((a, b) => (a.timestamp > b.timestamp ? -1 : 1))
     .map((post, index, posts) => ({
       ...post,
-      prevPostPath: index - 1 >= 0 ? posts[index - 1].routePath : false,
-      nextPostPath: index + 1 < posts.length ? posts[index + 1].routePath : false
+      prevPostPath: index - 1 >= 0 ? getPostLinkInfo(posts[index - 1]) : false,
+      nextPostPath: index + 1 < posts.length ? getPostLinkInfo(posts[index + 1]) : false
     }))
 
-const getPostsRoutes = () => getPosts().map(post => post.routePath)
+const getPostsRoutes = () => getPosts().map(post => getPostLinkInfo(post))
 
 const getTagsCount = () =>
   getPosts().reduce((acc, cur) => {
@@ -52,14 +60,14 @@ const getTagsRoutes = () => Object.keys(getTagsCount()).map(tag => `/tags/${tag}
 const getPostsByTag = tag =>
   getPosts()
     .filter(post => (post.data.tags || []).includes(tag))
-    .map(post => post.routePath)
+    .map(post => getPostLinkInfo(post))
 
 const getRecentPostsRoutes = post =>
   getPostsRoutes()
     .filter(routePath => routePath !== post.routePath)
     .slice(0, 3)
 
-const getAllRoutes = () => [...getPostsRoutes(), ...getTagsRoutes()]
+const getAllRoutes = () => [...getPostsRoutes(), ...getTagsRoutes()].map(postLinkInfo => postLinkInfo.routePath)
 
 module.exports = {
   getMdFiles,
