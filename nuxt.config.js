@@ -15,7 +15,7 @@ export default {
       lang: 'zh-Hant-TW'
     },
     titleTemplate: titleChunk => {
-      return titleChunk ? `${titleChunk} | Hunterliu` : `Hunterliu`
+      return titleChunk ? `${titleChunk} | HunterLiu` : `HunterLiu`
     },
     meta: (() => {
       const descriptionContent = '我不是獵頭，但我叫 Hunter，是個前端工程師，熱愛研究和分享技術，歡迎交流'

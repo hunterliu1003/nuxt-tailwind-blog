@@ -1,8 +1,7 @@
 <template lang="pug">
   div
     HHeader
-    hr.my-4
-    nuxt
+    nuxt.px-4.md_px-0
 </template>
 
 <script>

@@ -1,5 +1,6 @@
 <template lang="pug">
-  HMarkdown.max-w-3xl.mx-auto(v-once :value="content")
+  main.max-w-3xl.mx-auto
+    HMarkdown(v-once :value="content")
 </template>
 
 <script>

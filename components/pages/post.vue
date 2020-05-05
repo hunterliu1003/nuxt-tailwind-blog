@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.max-w-3xl.mx-auto
+  main.max-w-3xl.mx-auto
     h1 {{ post.data.title }}
     HTags(:tags="post.data.tags")
     HMarkdown(v-once :value="post.content")
