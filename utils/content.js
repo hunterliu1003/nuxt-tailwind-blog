@@ -67,7 +67,7 @@ const getRecentPostsRoutes = post =>
     .filter(routePath => routePath !== post.routePath)
     .slice(0, 3)
 
-const getAllRoutes = () => [...getPostsRoutes(), ...getTagsRoutes()].map(postLinkInfo => postLinkInfo.routePath)
+const getAllRoutes = () => [...getPostsRoutes().map(postLinkInfo => postLinkInfo.routePath), ...getTagsRoutes()]
 
 module.exports = {
   getMdFiles,
