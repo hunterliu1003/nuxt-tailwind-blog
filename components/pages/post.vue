@@ -4,13 +4,14 @@
     HTags(:tags="post.data.tags")
     HMarkdown(v-once :value="post.content")
     HTags(:tags="post.data.tags")
-    .flex.justify-between
-      nuxt-link(to="/" :class="{ 'text-red-500': !post.prevPostPath}" :disabled="!post.prevPostPath" :to="post.prevPostPath || ''") << post name
-      nuxt-link(to="/" :class="{ 'text-red-500': !post.nextPostPath}" :disabled="!post.nextPostPath" :to="post.nextPostPath || ''") post name >>
+    .flex.justify-between.mt-4
+      nuxt-link(v-if="post.prevPost" to="/" :to="post.prevPost.routePath || ''") << {{ post.prevPost.data.title }}
+      .flex-grow
+      nuxt-link(v-if="post.nextPost" to="/" :to="post.nextPost.routePath || ''") {{ post.nextPost.data.title }} >>
     //- vue-discus component
     h2.mt-4 近期發文
     h3
-      nuxt-link.block(:to="recentPostPath" v-for="recentPostPath in recentPostsRoutes" :key="recentPostPath") {{ recentPostPath }} should be post name with Date
+      nuxt-link.block(:to="recentPost.routePath" v-for="recentPost in recentPostsRoutes" :key="recentPost.routePath") {{ recentPost.data.title }} {{ recentPost.timestamp }}
     //- ads
 </template>
 

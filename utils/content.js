@@ -41,8 +41,8 @@ const getPosts = () =>
     .sort((a, b) => (a.timestamp > b.timestamp ? -1 : 1))
     .map((post, index, posts) => ({
       ...post,
-      prevPostPath: index - 1 >= 0 ? getPostLinkInfo(posts[index - 1]) : false,
-      nextPostPath: index + 1 < posts.length ? getPostLinkInfo(posts[index + 1]) : false
+      prevPost: index - 1 >= 0 ? getPostLinkInfo(posts[index - 1]) : false,
+      nextPost: index + 1 < posts.length ? getPostLinkInfo(posts[index + 1]) : false
     }))
 
 const getPostsRoutes = () => getPosts().map(post => getPostLinkInfo(post))
