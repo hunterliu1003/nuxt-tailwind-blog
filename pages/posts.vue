@@ -1,6 +1,6 @@
 <template lang="pug">
   main
-    nuxt-link.block.m-4(v-for="post in postsRoutes" :key="post" :to="post.routePath") # {{ post.data.title }} {{ post.timestamp }} 
+    nuxt-link.block.m-4(v-for="post in postsRoutes" :key="post.routePath" :to="post.routePath") # {{ post.data.title }} {{ post.timestamp }} 
 </template>
 
 <script>
