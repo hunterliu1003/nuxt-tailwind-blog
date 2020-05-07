@@ -94,7 +94,8 @@ export default {
     'nuxt-compress' // nuxt-compress is a simple asset compression module for Gzip and Brotili
   ],
   gtm: {
-    id: process.env.GTM_ID
+    id: process.env.GTM_ID,
+    pageTracking: true
   },
   tailwindcss: {
     purgeCSSInDev: false
