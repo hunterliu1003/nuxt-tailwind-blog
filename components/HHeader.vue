@@ -8,8 +8,8 @@
       nuxt-link(to="/posts").header-link 文章列表
       nuxt-link(to="/tags").header-link 標籤列表
     .flex.justify-center
-      a.header-link(href="https://www.facebook.com/hunterliu1003" target="_blank") Facebook
-      a.header-link(href="https://github.com/hunterliu1003" target="_blank") Github
+      a.header-link(rel="noreferrer" href="https://www.facebook.com/hunterliu1003" target="_blank") Facebook
+      a.header-link(rel="noreferrer" href="https://github.com/hunterliu1003" target="_blank") Github
     hr.my-4
 </template>
 
