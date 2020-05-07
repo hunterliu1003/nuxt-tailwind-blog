@@ -8,14 +8,19 @@
       nuxt-link(v-if="post.prevPost" to="/" :to="post.prevPost.routePath || ''") << {{ post.prevPost.data.title }}
       .flex-grow
       nuxt-link(v-if="post.nextPost" to="/" :to="post.nextPost.routePath || ''") {{ post.nextPost.data.title }} >>
-    //- vue-discus component
+    client-only
+      VueDisqus(shortname="hunterliu-blog" :identifier="$route.fullPath")
     h2.mt-4 近期發文
     h3
       nuxt-link.block(:to="recentPost.routePath" v-for="recentPost in recentPostsRoutes" :key="recentPost.routePath") {{ recentPost.data.title }} {{ recentPost.timestamp }}
-    //- ads
 </template>
 
 <script>
+import Vue from 'vue'
+import VueDisqus from 'vue-disqus'
+
+Vue.use(VueDisqus)
+
 export default {
   name: 'PagePost',
   asyncData(context) {
