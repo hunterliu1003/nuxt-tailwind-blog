@@ -15,15 +15,6 @@ tags: ['vue', 'tailwindcss', 'markdown-it']
 date: '2020-04-14'
 ---
 
-## Hello World!!
-
-### Hello World!!
-
-#### Hello World!!
-
-##### Hello World!!
-
-###### Hello World!!
 
 123
 
@@ -54,6 +45,10 @@ Lorem ipsum is placeholder text commonly used in the graphic, print, and publish
 Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
 
 ---
+
+## Hello World!!
+
+### Hello World!!
 
 Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
 

@@ -19,6 +19,19 @@ title: 關於我
 ## 更多開源專案或文章連結
 
 ### [開源專案：vue-automatic-import-loader](https://github.com/hunterliu1003/vue-automatic-import-loader)
+
+**vue-automatic-import-loader** 是一個 webpack 套件，目的在於自動引入 Vue Single-File Component(SFC)。
+
 ### [開源專案：vue_randomize_svg_def_ids](https://github.com/hunterliu1003/vue_randomize_svg_def_ids)
+
+**vue_randomize_svg_def_ids** 是一個 SVG 程式碼轉換工具，使用 Vue vm._uid 和 hash 產生隨機的字串，並用來替換向量圖在 html 元素中的 id。
+
+#### [Demo](https://hunterliu1003.github.io/vue_randomize_svg_def_ids/)
+
 ### [iThome 鐵人賽系列文 - 用範例理解 Vue.js](https://ithelp.ithome.com.tw/users/20107107/ironman/1243)
+
+
+
 ### [iThome 鐵人賽系列文 - 用 Nuxt.js 2.0, Vuetify, Storybook, Firebase 建一個 Blog](https://ithelp.ithome.com.tw/users/20107107/ironman/1614)
+
+
