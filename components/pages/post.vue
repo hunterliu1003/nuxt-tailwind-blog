@@ -10,19 +10,19 @@
       nuxt-link(v-if="post.nextPost" to="/" :to="post.nextPost.routePath || ''") {{ post.nextPost.data.title }} >>
     client-only
       VueDisqus(shortname="hunterliu-blog" :identifier="$route.fullPath")
-    h2.mt-4 近期發文
+    h2.mt-12 近期發文
     h3
       nuxt-link.block(:to="recentPost.routePath" v-for="recentPost in recentPostsRoutes" :key="recentPost.routePath") {{ recentPost.data.title }} {{ recentPost.timestamp }}
 </template>
 
 <script>
-import Vue from 'vue'
-import VueDisqus from 'vue-disqus'
-
-Vue.use(VueDisqus)
+import VueDisqus from 'vue-disqus/src/vue-disqus.vue'
 
 export default {
   name: 'PagePost',
+  components: {
+    VueDisqus
+  },
   asyncData(context) {
     return Object.freeze(context.app.$fetch(`/api/post?path=posts/${context.route.params.pathMatch}`))
   },
