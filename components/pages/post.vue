@@ -10,9 +10,9 @@
       nuxt-link(v-if="post.nextPost" to="/" :to="post.nextPost.routePath || ''") {{ post.nextPost.data.title }} >>
     client-only
       VueDisqus(shortname="hunterliu-blog" :identifier="$route.fullPath")
-    h2.mt-12 近期發文
+    h2.mt-12.mb-4 近期發文
     h3
-      nuxt-link.block(:to="recentPost.routePath" v-for="recentPost in recentPostsRoutes" :key="recentPost.routePath") {{ recentPost.data.title }} {{ recentPost.timestamp }}
+      nuxt-link.block(:to="recentPost.routePath" v-for="recentPost in recentPostsRoutes" :key="recentPost.routePath")  {{ $filter.getMMMDDYYYY(recentPost.timestamp) }} - {{ recentPost.data.title }}
 </template>
 
 <script>
