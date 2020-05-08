@@ -1,10 +1,10 @@
 <template lang="pug">
   main
     h1 {{ post.data.title }}
-    HTags(:tags="post.data.tags")
+    HTags.my-4(:tags="post.data.tags")
     HMarkdown(v-once :value="post.content")
-    HTags(:tags="post.data.tags")
-    .flex.justify-between.mt-4
+    HTags.my-4(:tags="post.data.tags")
+    .flex.justify-between.my-12
       nuxt-link(v-if="post.prevPost" to="/" :to="post.prevPost.routePath || ''") << {{ post.prevPost.data.title }}
       .flex-grow
       nuxt-link(v-if="post.nextPost" to="/" :to="post.nextPost.routePath || ''") {{ post.nextPost.data.title }} >>
