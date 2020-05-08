@@ -23,7 +23,7 @@ md.use(makdownItAttrs, {
     slugify: uslugify,
     level: 1,
     permalink: true,
-    permalinkClass: 'md-anchor',
+    permalinkClass: 'header-anchor',
     permalinkSymbol: '#',
     permalinkBefore: true
   })
