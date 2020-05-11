@@ -1,10 +1,14 @@
 module.exports = {
   separator: '_',
   theme: {
+    darkSelector: '.dark-mode',
     extend: {}
   },
   variants: {
-    margin: ['last']
+    margin: ['last'],
+    backgroundColor: ['dark', 'dark-hover'],
+    borderColor: ['dark', 'dark-focus'],
+    textColor: ['dark', 'dark-hover', 'dark-active']
   },
-  plugins: []
+  plugins: [require('tailwindcss-dark-mode')()]
 }
