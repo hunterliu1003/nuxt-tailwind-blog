@@ -103,17 +103,6 @@ export default {
     id: process.env.GTM_ID,
     pageTracking: true
   },
-  tailwindcss: {
-    purgeCSSInDev: false
-  },
-  purgeCSS: {
-    paths: ['content/**/*.md'],
-    whitelistPatternsChildren: [
-      /token/, // for prism
-      /pre/, // for prism
-      /code/ // for prism
-    ]
-  },
   routerModule: {
     /* module options */
     keepDefaultRouter: true
