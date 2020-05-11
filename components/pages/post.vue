@@ -3,9 +3,16 @@
     h1 {{ post.data.title }}
     p {{ $filter.getMMMDDYYYY(post.timestamp) }}
     HTags.my-4(:tags="post.data.tags")
-    HMarkdown(v-once :value="post.content")
-    HTags.my-4(:tags="post.data.tags")
-    .flex.justify-between.my-12
+    ul.flex
+      li
+        a(:href="`${href}#disqus_thread`") 0 留言
+      li.ml-4 fb
+      li.ml-4 twitter
+    hr
+    HMarkdown.mb-4(v-once :value="post.content")
+    HTags(:tags="post.data.tags")
+    hr
+    .flex.justify-between.mb-12
       nuxt-link(v-if="post.prevPost" to="/" :to="post.prevPost.routePath || ''") << {{ post.prevPost.data.title }}
       .flex-grow
       nuxt-link(v-if="post.nextPost" to="/" :to="post.nextPost.routePath || ''") {{ post.nextPost.data.title }} >>
@@ -27,10 +34,17 @@ export default {
   asyncData(context) {
     return Object.freeze(context.app.$fetch(`/api/post?path=posts/${context.route.params.pathMatch}`))
   },
+  data: () => ({
+    href: ''
+  }),
+  mounted() {
+    this.href = window.location.href
+  },
   head() {
     return {
       title: this.post.data.title,
-      meta: this.post.data.meta
+      meta: this.post.data.meta,
+      script: [{ src: 'https://hunterliu-blog.disqus.com/count.js', id: 'dsq-count-scr', async: true, body: true }]
     }
   }
 }
