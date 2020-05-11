@@ -37,6 +37,11 @@ export default {
   data: () => ({
     href: ''
   }),
+  watch: {
+    '$colorMode.preference'() {
+      window.DISQUS && window.DISQUS.reset({ reload: true })
+    }
+  },
   mounted() {
     this.href = window.location.href
   },
