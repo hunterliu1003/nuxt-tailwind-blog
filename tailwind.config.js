@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   purge: {
     enabled: process.env.NODE_ENV === 'production',
@@ -13,7 +15,24 @@ module.exports = {
   separator: '_',
   theme: {
     darkSelector: '.dark-mode',
-    extend: {}
+    extend: {
+      colors: {
+        light: {
+          surface: '#F8FAFC',
+          onSurfacePrimary: '#2F495E',
+          onSurfaceSecondary: '#606F7B',
+          elevatedSurface: defaultTheme.colors.white,
+          border: defaultTheme.colors.gray['300']
+        },
+        dark: {
+          surface: '#2C3E50',
+          onSurfacePrimary: '#F5F7FA',
+          onSurfaceSecondary: '#B8C2CC',
+          elevatedSurface: '#2F495E',
+          border: defaultTheme.colors.gray['600']
+        }
+      }
+    }
   },
   variants: {
     margin: ['last'],
