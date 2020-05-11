@@ -73,6 +73,8 @@ export default {
         match(originalTag, { kebabTag, camelTag, path, component }) {
           if (kebabTag.startsWith('h-')) {
             return [camelTag, `import ${camelTag} from '@/components/${camelTag}.vue'`]
+          } else if (kebabTag.startsWith('svg-')) {
+            return [camelTag, `import ${camelTag} from '@/components/svg/${camelTag.replace('Svg', '')}.vue'`]
           }
         }
       })
