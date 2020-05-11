@@ -22,6 +22,7 @@
     }
   },
   "dependencies": {
+    "@nuxtjs/color-mode": "^1.0.0",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/gtm": "^2.2.3",
     "@nuxtjs/markdownit": "^1.2.9",

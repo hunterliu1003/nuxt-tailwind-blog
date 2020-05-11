@@ -10,6 +10,10 @@
     .flex.justify-center
       a.header-link(rel="noopener noreferrer" href="https://www.facebook.com/hunterliu1003" target="_blank") Facebook
       a.header-link(rel="noopener noreferrer" href="https://github.com/hunterliu1003" target="_blank") Github
+    .flex.justify-center
+      button.px-4.py-2(@click="$colorMode.preference = 'system'") System
+      button.px-4.py-2(@click="$colorMode.preference = 'light'") Light
+      button.px-4.py-2(@click="$colorMode.preference = 'dark'") Dark
     hr.my-4
 </template>
 

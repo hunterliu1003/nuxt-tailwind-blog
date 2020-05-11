@@ -86,7 +86,8 @@ export default {
     '@nuxtjs/stylelint-module',
     '@nuxtjs/gtm',
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/router'
+    '@nuxtjs/router',
+    '@nuxtjs/color-mode'
   ],
   modules: [
     '@nuxtjs/dotenv',
@@ -116,6 +117,9 @@ export default {
   routerModule: {
     /* module options */
     keepDefaultRouter: true
+  },
+  colorMode: {
+    preference: 'dark'
   },
   env: {
     BASE_URL: process.env.BASE_URL
