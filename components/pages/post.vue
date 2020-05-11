@@ -1,6 +1,7 @@
 <template lang="pug">
   main
     h1 {{ post.data.title }}
+    p {{ $filter.getMMMDDYYYY(post.timestamp) }}
     HTags.my-4(:tags="post.data.tags")
     HMarkdown(v-once :value="post.content")
     HTags.my-4(:tags="post.data.tags")
