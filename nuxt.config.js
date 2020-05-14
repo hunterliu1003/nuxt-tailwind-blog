@@ -92,6 +92,10 @@ export default {
     '@nuxtjs/color-mode'
   ],
   modules: ['@nuxtjs/dotenv', '@nuxtjs/robots', '@nuxtjs/sitemap', 'nuxt-compress'],
+  routerModule: {
+    /* module options */
+    keepDefaultRouter: true
+  },
   gtm: {
     id: process.env.GTM_ID,
     pageTracking: true
