@@ -91,23 +91,10 @@ export default {
     '@nuxtjs/router',
     '@nuxtjs/color-mode'
   ],
-  modules: [
-    '@nuxtjs/dotenv',
-    '@nuxtjs/robots',
-    /* 
-    fix @nuxt/sitemap via SRR not working on zeit now #106 
-    https://github.com/nuxt-community/sitemap-module/issues/106#issuecomment-603533758
-    */
-    '@nuxtjs/sitemap',
-    'nuxt-compress' // nuxt-compress is a simple asset compression module for Gzip and Brotili
-  ],
+  modules: ['@nuxtjs/dotenv', '@nuxtjs/robots', '@nuxtjs/sitemap', 'nuxt-compress'],
   gtm: {
     id: process.env.GTM_ID,
     pageTracking: true
-  },
-  routerModule: {
-    /* module options */
-    keepDefaultRouter: true
   },
   colorMode: {
     preference: 'dark'
