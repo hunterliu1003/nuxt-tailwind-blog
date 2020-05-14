@@ -6,6 +6,9 @@ Vue.use(Router)
 export function createRouter() {
   const router = new Router({
     mode: 'history',
+    scrollBehavior() {
+      return { x: 0, y: 0 }
+    },
     routes: [
       {
         path: '/',
