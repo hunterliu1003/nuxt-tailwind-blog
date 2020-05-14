@@ -15,6 +15,7 @@ title: 關於我
 一言不合就先看原始碼的習慣，讓我漸漸將設計模式(Design Pattern)和函式編程(Functional Programming)應用在日常工作和作品集中。
 
 設計和審美不是我所擅長的項目，但給我 prototype 我能做到 pixel perfect。
+
 ---
 
 ## 更多開源專案或文章連結
@@ -30,8 +31,6 @@ title: 關於我
 #### [Demo](https://hunterliu1003.github.io/vue_randomize_svg_def_ids/)
 
 ### [iThome 鐵人賽系列文 - 用範例理解 Vue.js](https://ithelp.ithome.com.tw/users/20107107/ironman/1243)
-
-
 
 ### [iThome 鐵人賽系列文 - 用 Nuxt.js 2.0, Vuetify, Storybook, Firebase 建一個 Blog](https://ithelp.ithome.com.tw/users/20107107/ironman/1614)
 
