@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.h-layout-default.flex.flex-col.min-h-screen
+  div.flex.flex-col.min-h-screen
     HHeader
     nuxt.w-full.max-w-3xl.px-8.pb-16.md_px-0.md_pt-16.mx-auto
     HFooter.mt-auto

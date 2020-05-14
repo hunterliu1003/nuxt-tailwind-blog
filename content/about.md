@@ -12,8 +12,9 @@ title: 關於我
 
 一直朝成為**前端架構師**和貢獻**開源專案或社群**的方向前進，不排斥學習後端技術，但取捨後總是把時間花在學習前端上了，
 擅長且偏好使用 Nuxt.js, Vue.js, TailwindCSS 解決問題，喜歡閱讀開源專案原始碼，
-一言不合就先看原始碼的習慣，讓我漸漸將設計模式(Design Pattern)或函式編程(Functional Programming)應用在日常工作和作品集中。
+一言不合就先看原始碼的習慣，讓我漸漸將設計模式(Design Pattern)和函式編程(Functional Programming)應用在日常工作和作品集中。
 
+設計和審美不是我所擅長的項目，但給我 prototype 我能做到 pixel perfect。
 ---
 
 ## 更多開源專案或文章連結
