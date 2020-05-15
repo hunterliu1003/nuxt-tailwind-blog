@@ -6,6 +6,7 @@ const markdownItAnchor = require('markdown-it-anchor')
 const uslug = require('uslug')
 const uslugify = s => uslug(s, { lower: false })
 const markdownItPrism = require('./markdown-it/markdownItPrism')
+const link = require('./markdown-it/link')
 
 const md = new MarkdownIt({
   html: true,
@@ -19,6 +20,10 @@ md.use(makdownItAttrs, {
   rightDelimiter: '}}'
 })
   .use(markdownItPlayground)
+  .use(link, {
+    target: '_blank',
+    rel: 'noopener noreferrer'
+  })
   .use(markdownItAnchor, {
     slugify: uslugify,
     level: 1,
