@@ -2,7 +2,7 @@
   main
     h1 {{ $route.params.tag }}
     h2(v-for="post in postsRoutes")
-      nuxt-link(:to="post.routePath") # {{ $filter.getMMMDDYYYY(post.timestamp) }} - {{ post.data.title }}
+      NLink(:to="post.routePath") # {{ $filter.getMMMDDYYYY(post.timestamp) }} - {{ post.data.title }}
 </template>
 
 <script>
