@@ -9,7 +9,7 @@
 export default {
   name: 'PageTag',
   asyncData(context) {
-    return Object.freeze(context.app.$fetch(`/api/tag?tag=${context.route.params.tag}`))
+    return Object.freeze(context.app.$fetch(context, `/api/tag?tag=${context.route.params.tag}`))
   }
 }
 </script>

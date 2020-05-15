@@ -32,7 +32,7 @@ export default {
     VueDisqus
   },
   asyncData(context) {
-    return Object.freeze(context.app.$fetch(`/api/post?path=posts/${context.route.params.pathMatch}`))
+    return Object.freeze(context.app.$fetch(context, `/api/post?path=posts/${context.route.params.pathMatch}`))
   },
   data: () => ({
     href: ''

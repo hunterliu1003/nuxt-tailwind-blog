@@ -7,7 +7,7 @@
 export default {
   name: 'PageAbout',
   asyncData(context) {
-    return context.app.$fetch('/api/content?path=about')
+    return context.app.$fetch(context, '/api/content?path=about')
   },
   head() {
     return {

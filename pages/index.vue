@@ -7,7 +7,7 @@
 export default {
   name: 'PageHome',
   asyncData(context) {
-    return Object.freeze(context.app.$fetch('/api/posts'))
+    return Object.freeze(context.app.$fetch(context, '/api/posts'))
   }
 }
 </script>

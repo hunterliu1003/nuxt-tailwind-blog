@@ -1,6 +1,5 @@
 import shrinkRay from 'shrink-ray-current'
 import VueAutomaticImportPlugin from 'vue-automatic-import-loader/lib/plugin'
-import cheerio from 'cheerio'
 import { getAllRoutes } from './utils/content'
 const allRoutes = getAllRoutes()
 
@@ -91,7 +90,7 @@ export default {
     '@nuxtjs/router',
     '@nuxtjs/color-mode'
   ],
-  modules: ['@nuxtjs/dotenv', '@nuxtjs/robots', '@nuxtjs/sitemap', 'nuxt-compress'],
+  modules: ['@nuxtjs/dotenv', '@nuxtjs/robots', '@nuxtjs/sitemap', 'nuxt-compress', 'nuxt-payload-extractor'],
   routerModule: {
     /* module options */
     keepDefaultRouter: true
@@ -119,13 +118,6 @@ export default {
   },
   generate: {
     routes: allRoutes
-  },
-  hooks: {
-    'generate:page': page => {
-      const doc = cheerio.load(page.html)
-      doc(`body script`).remove()
-      page.html = doc.html()
-    }
   },
   'nuxt-compress': {
     gzip: {
