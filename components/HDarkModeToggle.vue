@@ -2,11 +2,9 @@
   button.relative.flex.items-center.h-10.px-4.bg-gray-200.dark_bg-dark-surface.dark_text-dark-onSurfaceSecondary.rounded-full.text-light-onSurfacePrimary.dark_text-dark-onSurfacePrimary.transition-colors.duration-300.ease-linear(@click='setCurrentTheme')
     span.relative.w-5.h-5.mr-2
       SvgMoon(class="w-5 h-5 absolute" :class="$colorMode.preference === 'dark' ? 'show' : 'hide'")
-      SvgSystem(class="w-5 h-5 absolute" :class="$colorMode.preference === 'system' ? 'show' : 'hide'")
       SvgSun(class="w-5 h-5 absolute" :class="$colorMode.preference === 'light' ? 'show' : 'hide'")
     transition(name="from-bottom-to-bottom" mode="out-in")
       span.mr-1(v-if="$colorMode.preference === 'dark'" key="dark") Dark
-      span.mr-1(v-if="$colorMode.preference === 'system'" key="system") System
       span.mr-1(v-else-if="$colorMode.preference === 'light'" key="light") Light
 </template>
 
@@ -14,8 +12,7 @@
 export default {
   methods: {
     setCurrentTheme() {
-      this.$colorMode.preference =
-        this.$colorMode.preference === 'system' ? 'light' : this.$colorMode.preference === 'light' ? 'dark' : 'system'
+      this.$colorMode.preference = this.$colorMode.preference === 'light' ? 'dark' : 'light'
     }
   }
 }

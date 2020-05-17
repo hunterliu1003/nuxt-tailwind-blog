@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.flex.flex-col.min-h-screen
+  div.flex.flex-col.min-h-screen.bg-light-elevatedSurface.dark_bg-dark-elevatedSurface
     HHeader
     nuxt.w-full.max-w-3xl.px-8.pb-16.md_px-0.md_pt-16.mx-auto
     HFooter.mt-auto
@@ -10,14 +10,3 @@ export default {
   name: 'LayoutDefault'
 }
 </script>
-
-<style>
-body {
-  background-color: #fff;
-  color: rgba(0, 0, 0, 0.8);
-}
-.dark-mode body {
-  background-color: #091a28;
-  color: #ebf4f1;
-}
-</style>
