@@ -36,17 +36,15 @@ pre[class*='language-'] {
   border-radius: 6px;
 }
 
-.header-anchor.header-anchor {
-  @apply absolute opacity-0;
-  text-decoration: none;
+.header-anchor {
+  @apply absolute opacity-0 text-nuxt-lightgreen;
   font-size: 0.85em;
   margin-left: -0.87em;
   margin-top: 0.125em;
   padding-right: 0.25em;
   user-select: none;
-  color: #00c58e;
 }
-.header-anchor {
+.header-anchor:hover {
   text-decoration: underline;
 }
 
