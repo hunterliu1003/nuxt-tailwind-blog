@@ -6,6 +6,11 @@ const url = require('url')
 
 const indexRE = /(^|.*\/)(index|readme).md(#?.*)$/i
 
+const fs = require('fs')
+const path = require('path')
+
+const OutboundLink = fs.readFileSync(path.resolve(__dirname, '../../assets/svg/OutboundLink.svg'), 'utf8')
+
 module.exports = (md, externalAttrs) => {
   let hasOpenRouterLink = false
   let hasOpenExternalLink = false
@@ -77,7 +82,7 @@ module.exports = (md, externalAttrs) => {
     if (hasOpenExternalLink) {
       hasOpenExternalLink = false
       // add OutBoundLink to the beforeend of this link if it opens in _blank.
-      return '<SvgOutboundLink/>' + self.renderToken(tokens, idx, options)
+      return OutboundLink + self.renderToken(tokens, idx, options)
     }
     return self.renderToken(tokens, idx, options)
   }

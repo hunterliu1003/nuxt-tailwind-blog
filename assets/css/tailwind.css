@@ -48,6 +48,14 @@ h3:hover .header-anchor {
   @apply opacity-100;
 }
 
+.icon.outbound {
+  position: relative;
+  top: -1px;
+  display: inline-block;
+  vertical-align: middle;
+  color: #aaa;
+}
+
 @tailwind components;
 /* purgecss end ignore */
 
