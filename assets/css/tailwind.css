@@ -24,22 +24,30 @@ p {
 a {
   @apply font-normal;
 }
+a:hover {
+  text-decoration: underline;
+}
 hr {
   @apply my-8;
 }
 
-pre, pre[class*="language-"] {
+pre,
+pre[class*='language-'] {
   border-radius: 6px;
 }
 
-.header-anchor {
+.header-anchor.header-anchor {
   @apply absolute opacity-0;
-  text-decoration: none !important;
+  text-decoration: none;
   font-size: 0.85em;
   margin-left: -0.87em;
   margin-top: 0.125em;
   padding-right: 0.25em;
   user-select: none;
+  color: #00c58e;
+}
+.header-anchor {
+  text-decoration: underline;
 }
 
 h1:hover .header-anchor,
