@@ -32,7 +32,12 @@ export default {
         { property: 'og:type', content: 'article' }
       ]
     })(),
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    bodyAttrs: {
+      class: [
+        'bg-light-surface dark_bg-dark-surface text-light-onSurfacePrimary dark_text-dark-onSurfacePrimary transition-colors duration-300 ease-linear'
+      ]
+    }
   },
   loading: false,
   css: ['prismjs/themes/prism-tomorrow.css'],
@@ -100,7 +105,8 @@ export default {
     pageTracking: true
   },
   colorMode: {
-    preference: 'dark'
+    preference: 'dark',
+    fallback: 'dark'
   },
   env: {
     BASE_URL: process.env.BASE_URL
