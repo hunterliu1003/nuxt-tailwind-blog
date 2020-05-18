@@ -7,6 +7,7 @@
       "config": {
         "serverFiles": [
           "api/**",
+          "assets/**",
           "serverMiddleware/**",
           "content/**",
           "utils/**",
