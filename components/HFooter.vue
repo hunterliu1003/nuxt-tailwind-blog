@@ -1,5 +1,5 @@
 <template lang="pug">
-  footer.h-10
+  footer.p-4
     p.text-sm.font-normal.text-center
       | Copyright © {{ new Date().getFullYear() }} 
       a(href="/") HunterLiu's Blog. 

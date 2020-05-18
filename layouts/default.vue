@@ -3,6 +3,8 @@
     HHeader
     main.w-full.max-w-3xl.px-8.pb-16.pt-16.md_pt-24.mx-auto
       nuxt.pt-8
+    HFooter.mt-auto.mb-16.md_mb-0
+    HMobileMainNavigation
 </template>
 
 <script>
