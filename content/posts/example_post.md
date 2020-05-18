@@ -1,14 +1,11 @@
 ---
 title: This is an article
+description: article content
 meta: [
   {
     hid: description,
     name: description,
     content: hello
-  },
-  {
-    name: keywords,
-    content: super duper SEO
   }
 ]
 tags: ['vue', 'tailwindcss', 'markdown-it']

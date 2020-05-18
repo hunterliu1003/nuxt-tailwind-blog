@@ -18,18 +18,21 @@ export default {
       return titleChunk ? `${titleChunk} | HunterLiu` : `HunterLiu`
     },
     meta: (() => {
-      const descriptionContent = '我不是獵頭，但我叫 Hunter，是個前端工程師，熱愛研究和分享技術，歡迎交流'
+      const title = "HunterLiu's Blog"
+      const descriptionContent =
+        '我不是獵頭，但我叫 Hunter，是個前端工程師，雖然沒有社交障礙，但對於技術之外的話題，的確會讓我有點不自在，如果想討論技術可以加我的 Facebook，並簡單介紹一下你是誰。'
       return [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'google-site-verification', content: process.env.GOOGLE_SITE_VERIFICATION },
         { hid: 'description', name: 'description', content: descriptionContent },
-        { itemprop: 'name', content: 'HunterLiu' },
-        { itemprop: 'description', content: descriptionContent },
-        { property: 'og:title', content: 'HunterLiu' },
-        { property: 'og:description', content: descriptionContent },
-        { property: 'og:site_name', content: descriptionContent },
-        { property: 'og:type', content: 'article' }
+        { hid: 'itemprop:name', itemprop: 'name', content: title },
+        { hid: 'itemprop:description', itemprop: 'description', content: descriptionContent },
+        // Open Graph
+        { hid: 'og:site_name', property: 'og:site_name', content: title },
+        { hid: 'og:title', property: 'og:title', content: title },
+        { hid: 'og:description', property: 'og:description', content: descriptionContent },
+        { hid: 'og:type', property: 'og:type', content: 'website' }
       ]
     })(),
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],

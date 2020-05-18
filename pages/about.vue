@@ -11,7 +11,13 @@ export default {
   },
   head() {
     return {
-      title: this.data.title
+      title: this.data.title,
+      meta: [
+        { hid: 'description', name: 'description', content: this.data.description },
+        // Open Graph
+        { hid: 'og:title', property: 'og:title', content: this.data.title },
+        { hid: 'og:description', property: 'og:description', content: this.data.description }
+      ]
     }
   }
 }

@@ -56,7 +56,14 @@ export default {
   head() {
     return {
       title: this.post.data.title,
-      meta: this.post.data.meta,
+      meta: [
+        { hid: 'description', name: 'description', content: this.post.data.description },
+        // Open Graph
+        { hid: 'og:title', property: 'og:title', content: this.post.data.title },
+        { hid: 'og:description', property: 'og:description', content: this.post.data.description },
+        { hid: 'og:type', property: 'og:type', content: 'article' },
+        ...this.post.data.meta
+      ],
       script: [{ src: 'https://hunterliu-blog.disqus.com/count.js', id: 'dsq-count-scr', async: true, body: true }]
     }
   }

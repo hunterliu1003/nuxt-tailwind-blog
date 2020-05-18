@@ -1,5 +1,6 @@
 ---
 title: 關於我
+description: 我不是獵頭，但我叫 **Hunter**，是個**前端工程師**，雖然沒有社交障礙，但對於技術之外的話題，的確會讓我有點不自在，如果想討論技術可以加我的 [Facebook](https://www.facebook.com/hunterliu1003)，並簡單介紹一下你是誰。
 ---
 
 # 關於我
@@ -9,6 +10,8 @@ title: 關於我
 如果想討論技術可以加我的 [Facebook](https://www.facebook.com/hunterliu1003)，並簡單介紹一下你是誰。
 
 ---
+
+The application is now running on http://localhost:3000.
 
 一直朝成為**前端架構師**和貢獻**開源專案或社群**的方向前進，不排斥學習後端技術，但取捨後總是把時間花在學習前端上了，
 擅長且偏好使用 Nuxt.js, Vue.js, TailwindCSS 解決問題，喜歡閱讀開源專案原始碼，
