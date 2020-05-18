@@ -40,7 +40,7 @@ module.exports = {
     }
   },
   variants: {
-    margin: ['last'],
+    margin: ['responsive', 'last'],
     backgroundColor: ['dark', 'dark-hover'],
     borderColor: ['dark', 'dark-focus'],
     textColor: ['dark', 'dark-hover', 'dark-active']
