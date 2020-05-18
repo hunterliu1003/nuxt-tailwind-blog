@@ -11,9 +11,9 @@
       li.ml-4 twitter
       li.ml-4
         client-only
-          script(async src='https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js')
+          component(is="script" src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async) 
           span#busuanzi_container_page_pv
-            span#busuanzi_value_page_pv
+            span#busuanzi_value_page_pv 0
             |  瀏覽
     hr
     HMarkdown.mb-4(v-once :value="post.content")
