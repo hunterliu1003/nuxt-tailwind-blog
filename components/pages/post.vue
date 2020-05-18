@@ -9,6 +9,12 @@
         span  留言
       li.ml-4 fb
       li.ml-4 twitter
+      li.ml-4
+        client-only
+          script(async src='https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js')
+          span#busuanzi_container_page_pv
+            span#busuanzi_value_page_pv
+            |  瀏覽
     hr
     HMarkdown.mb-4(v-once :value="post.content")
     HTags(:tags="post.data.tags")
