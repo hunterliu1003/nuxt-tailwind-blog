@@ -46,7 +46,9 @@ export default {
   }),
   watch: {
     '$colorMode.preference'() {
-      window.DISQUS && window.DISQUS.reset({ reload: true })
+      setTimeout(() => {
+        window.DISQUS && window.DISQUS.reset({ reload: true })
+      }, 300)
     }
   },
   mounted() {
