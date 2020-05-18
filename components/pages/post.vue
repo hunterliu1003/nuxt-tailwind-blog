@@ -5,7 +5,8 @@
     HTags.my-4(:tags="post.data.tags")
     ul.flex
       li
-        a(:href="`${href}#disqus_thread`") 0 留言
+        a(:href="`${href}#disqus_thread`") 0
+        span  留言
       li.ml-4 fb
       li.ml-4 twitter
     hr
@@ -44,6 +45,7 @@ export default {
   },
   mounted() {
     this.href = window.location.href
+    window.DISQUSWIDGETS && window.DISQUSWIDGETS.getCount({ reset: true })
   },
   head() {
     return {
