@@ -1,6 +1,7 @@
 <template lang="pug">
   section
-    NLink.block.m-4(v-for="post in postsRoutes" :key="post.routePath" :to="post.routePath") # {{ $filter.getMMMDDYYYY(post.timestamp) }} - {{ post.data.title }}
+    h1 文章列表
+    NLink.block.mt-4(v-for="post in postsRoutes" :key="post.routePath" :to="post.routePath") # {{ $filter.getMMMDDYYYY(post.timestamp) }} - {{ post.data.title }}
 </template>
 
 <script>

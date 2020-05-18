@@ -1,8 +1,7 @@
 <template lang="pug">
   section
     h1 {{ $route.params.tag }}
-    h2(v-for="post in postsRoutes")
-      NLink(:to="post.routePath") # {{ $filter.getMMMDDYYYY(post.timestamp) }} - {{ post.data.title }}
+    NLink.block.mt-4(v-for="post in postsRoutes" :to="post.routePath") # {{ $filter.getMMMDDYYYY(post.timestamp) }} - {{ post.data.title }}
 </template>
 
 <script>
