@@ -1,5 +1,5 @@
 <template lang="pug">
-  main.text-center
+  section.text-center
     h1 404
     p.my-4 此頁面不存在
     p 如果你是因為 bug 而進到這頁面

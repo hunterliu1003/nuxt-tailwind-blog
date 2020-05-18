@@ -1,5 +1,5 @@
 <template lang="pug">
-  main
+  section
     NLink.block.m-4(v-for="post in postsRoutes" :key="post.routePath" :to="post.routePath") # {{ $filter.getMMMDDYYYY(post.timestamp) }} - {{ post.data.title }}
 </template>
 

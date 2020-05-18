@@ -1,5 +1,5 @@
 <template lang="pug">
-  main
+  section
     HMarkdown(v-once :value="content")
 </template>
 
