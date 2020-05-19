@@ -5,34 +5,7 @@
       NLink(to="/about").header-link 關於我
       NLink(to="/posts").header-link 文章列表
       NLink(to="/tags").header-link 標籤列表
-      button(v-show="showScrollTopBtn" @click="scrollTop").header-link.focus_outline-none Top
 </template>
-
-<script>
-export default {
-  data: () => ({
-    showScrollTopBtn: false
-  }),
-  mounted() {
-    this.scrollHandler()
-  },
-  methods: {
-    scrollTop() {
-      window.scrollTo(0, 0)
-    },
-    scrollHandler() {
-      const self = this
-      window.onscroll = function () {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-          self.showScrollTopBtn = true
-        } else {
-          self.showScrollTopBtn = false
-        }
-      }
-    }
-  }
-}
-</script>
 
 <style lang="scss" scoped>
 nav {

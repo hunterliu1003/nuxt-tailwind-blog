@@ -5,6 +5,7 @@
       nuxt.pt-8
     HFooter.mt-auto.mb-16.md_mb-0
     HMobileMainNavigation
+    HScrollTop
 </template>
 
 <script>
