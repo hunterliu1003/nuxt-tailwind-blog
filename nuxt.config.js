@@ -123,10 +123,10 @@ export default {
   ],
   sitemap: {
     hostname: process.env.BASE_URL,
-    routes: allRoutes
+    routes: ['/', ...allRoutes]
   },
   generate: {
-    routes: allRoutes
+    routes: ['/', ...allRoutes]
   },
   'nuxt-compress': {
     gzip: {
