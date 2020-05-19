@@ -8,21 +8,15 @@
         a(:href="`${href}#disqus_thread`") 0
         span  留言
       li.ml-4 fb
-      li.ml-4 twitter
+      li.ml-4 vue-goodshare
       li.ml-4
-        client-only
-          component(is="script" src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async) 
-          span#busuanzi_container_page_pv
-            span#busuanzi_value_page_pv 0
-            |  瀏覽
+        HViewCounter
     hr
     HMarkdown.mb-4(v-once :value="post.content")
-    HTags(:tags="post.data.tags")
-    hr
-    .flex.justify-between.mb-12
-      NLink(v-if="post.prevPost" to="/" :to="post.prevPost.routePath || ''") << {{ post.prevPost.data.title }}
+    .flex.justify-between.my-12.pb-5.border-b.border-light-border.dark_border-dark-border
+      NLink.font-sans.text-primary-base(v-if="post.prevPost" to="/" :to="post.prevPost.routePath || ''") ← {{ post.prevPost.data.title }}
       .flex-grow
-      NLink(v-if="post.nextPost" to="/" :to="post.nextPost.routePath || ''") {{ post.nextPost.data.title }} >>
+      NLink.font-sans.text-primary-base(v-if="post.nextPost" to="/" :to="post.nextPost.routePath || ''") {{ post.nextPost.data.title }} →
     client-only
       VueDisqus(shortname="hunterliu-blog" :identifier="$route.fullPath")
     h2.mt-12.mb-4 近期發文
