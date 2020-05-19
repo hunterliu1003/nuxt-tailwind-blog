@@ -1,5 +1,5 @@
 <template lang="pug">
-  header.fixed.top-0.left-0.right-0.z-30.h-16.md_h-24.bg-light-elevatedSurface.dark_bg-dark-elevatedSurface.border-b.border-light-border.dark_border-dark-border.lg_border-0
+  header.fixed.top-0.left-0.right-0.z-30.h-16.md_h-24.bg-light-elevatedSurface.dark_bg-dark-elevatedSurface.border-b.border-light-border.dark_border-dark-border.md_border-0
     .max-w-3xl.flex.items-center.h-full.mx-auto.px-4
       h1.mr-auto
         NLink(to="/").block.text-2xl.tracking-tight HunterLiu
