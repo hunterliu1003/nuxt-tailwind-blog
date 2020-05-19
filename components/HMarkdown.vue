@@ -98,7 +98,7 @@ div ::v-deep {
     width: 100%;
   }
   & h2 {
-    @apply relative table my-8;
+    @apply relative table my-8 transition-colors duration-300 ease-linear;
     &::after {
       content: ' ';
       width: 80%;
@@ -109,7 +109,7 @@ div ::v-deep {
     }
   }
   & h3 {
-    @apply relative table my-8;
+    @apply relative table my-8 transition-colors duration-300 ease-linear;
     &::after {
       content: ' ';
       width: 80%;
@@ -132,7 +132,7 @@ div ::v-deep {
     @apply italic leading-loose;
   }
   & code {
-    @apply p-1 not-italic rounded text-sm;
+    @apply p-1 not-italic rounded text-sm transition-colors duration-300 ease-linear;
   }
   & a {
     overflow-wrap: break-word;
