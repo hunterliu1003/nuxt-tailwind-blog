@@ -10,6 +10,16 @@
 
 <script>
 export default {
-  name: 'LayoutDefault'
+  name: 'LayoutDefault',
+  head() {
+    return {
+      link: [
+        { rel: 'preconnect', href: 'https://www.google-analytics.com' },
+        { rel: 'preconnect', href: 'http://hunterliu-blog.disqus.com' },
+        { rel: 'preconnect', href: 'https://hunterliu-blog.disqus.com' },
+        { rel: 'preconnect', href: 'https://www.googletagmanager.com' }
+      ]
+    }
+  }
 }
 </script>
