@@ -12,9 +12,9 @@
         HDisqusCommentCounter(shortname="hunterliu-blog")
     HMarkdown.mb-4(v-once :value="post.content")
     .flex.justify-between.my-12.pb-5.border-b.border-light-border.dark_border-dark-border
-      NLink.font-sans.text-primary-base(v-if="post.prevPost" to="/" :to="post.prevPost.routePath || ''") ← {{ post.prevPost.data.title }}
+      NLink.prev-link(v-if="post.prevPost" to="/" :to="post.prevPost.routePath || ''") ← {{ post.prevPost.data.title }}
       .flex-grow
-      NLink.font-sans.text-primary-base(v-if="post.nextPost" to="/" :to="post.nextPost.routePath || ''") {{ post.nextPost.data.title }} →
+      NLink.next-link(v-if="post.nextPost" to="/" :to="post.nextPost.routePath || ''") {{ post.nextPost.data.title }} →
     HLazyDisqus(shortname="hunterliu-blog" :identifier="$route.fullPath")
     h2.mt-12 近期發文
     h3
@@ -42,3 +42,16 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.next-link,
+.prev-link {
+  @apply font-sans text-primary-dark;
+}
+.dark-mode {
+  .next-link,
+  .prev-link {
+    @apply font-sans text-primary-dark;
+  }
+}
+</style>
