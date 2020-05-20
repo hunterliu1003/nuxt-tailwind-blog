@@ -74,7 +74,7 @@ export default {
     '~/plugins/filter'
   ],
   build: {
-    extractCSS: true,
+    // extractCSS: true,
     plugins: [
       new VueAutomaticImportPlugin({
         match(originalTag, { kebabTag, camelTag, path, component }) {
