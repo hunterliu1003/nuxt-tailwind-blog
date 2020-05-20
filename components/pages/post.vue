@@ -51,7 +51,7 @@ export default {
 .dark-mode {
   .next-link,
   .prev-link {
-    @apply font-sans text-primary-dark;
+    @apply font-sans text-primary-base;
   }
 }
 </style>
