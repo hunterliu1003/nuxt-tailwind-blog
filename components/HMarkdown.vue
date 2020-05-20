@@ -34,7 +34,7 @@ div ::v-deep {
     color: theme('colors.light.onSurfaceSecondary');
   }
   & a {
-    @apply text-nuxt-lightgreen;
+    @apply text-primary-dark;
 
     & code {
       @apply text-nuxt-lightgreen;
@@ -45,10 +45,9 @@ div ::v-deep {
   }
   // inline code snippet
   & code {
-    @apply bg-gray-100 text-red-500;
+    @apply bg-gray-100 text-red-700;
   }
   & pre {
-    background-color: theme('colors.dark.elevatedSurface');
     code {
       @apply bg-transparent;
       color: theme('colors.dark.onSurfacePrimary');
@@ -76,12 +75,11 @@ div ::v-deep {
   }
   // inline code snippet
   & code {
-    @apply bg-gray-800;
+    background-color: #272f3f;
     color: #e1e8f5;
   }
   // code snippet block
   & pre {
-    background-color: #1e344c;
     code {
       @apply bg-transparent;
       color: theme('colors.dark.onSurfacePrimary');

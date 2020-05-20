@@ -25,7 +25,7 @@ module.exports = {
         primary: {
           base: '#00C58E',
           light: '#00E0A1',
-          dark: '#07A377'
+          dark: '#26856e'
         },
         light: {
           surface: '#F8FAFC',
@@ -38,7 +38,7 @@ module.exports = {
           surface: '#2C3E50',
           onSurfacePrimary: '#F5F7FA',
           onSurfaceSecondary: '#B8C2CC',
-          elevatedSurface: '#2F495E',
+          elevatedSurface: '#2C3E50',
           border: defaultTheme.colors.gray['600']
         }
       }
