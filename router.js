@@ -13,7 +13,7 @@ export function createRouter() {
       {
         path: '/',
         name: 'index',
-        component: () => import('~/pages/about').then(m => m.default || m)
+        component: () => import('~/components/pages/about').then(m => m.default || m)
       },
       {
         path: '/posts',
