@@ -1,6 +1,6 @@
 <template lang="pug">
   section
-    HMarkdown(v-once :value="content")
+    HMarkdown(:value="content")
 </template>
 
 <script>

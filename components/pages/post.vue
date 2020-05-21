@@ -10,7 +10,7 @@
       li.ml-4 vue-goodshare
       li.ml-auto
         HDisqusCommentCounter(shortname="hunterliu-blog")
-    HMarkdown.mb-4(v-once :value="post.content")
+    HMarkdown.mb-4(:value="post.content")
     .flex.justify-between.my-12.pb-5.border-b.border-light-border.dark_border-dark-border
       NLink.prev-link(v-if="post.prevPost" to="/" :to="post.prevPost.routePath || ''") ← {{ post.prevPost.data.title }}
       .flex-grow
