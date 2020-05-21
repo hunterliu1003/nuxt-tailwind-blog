@@ -43,7 +43,6 @@ export default {
     }
   },
   loading: false,
-  css: ['prismjs/themes/prism-tomorrow.css'],
   serverMiddleware: [{ path: '/api', handler: '@/serverMiddleware/api' }],
   optimization: {
     splitChunks: {
