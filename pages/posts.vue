@@ -1,7 +1,7 @@
 <template lang="pug">
   section
-    h1 文章列表
-    HPostList(:postList="postsRoutes")
+    HHeading 文章列表
+    HPostList.mt-8(:postList="postsRoutes")
 </template>
 
 <script>

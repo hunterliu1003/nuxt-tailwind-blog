@@ -1,7 +1,7 @@
 <template lang="pug">
   section
-    h1 {{ $route.params.tag }}
-    HPostList(:postList="postsRoutes")
+    HHeading 標籤：{{ $route.params.tag }}
+    HPostList.mt-8(:postList="postsRoutes")
 </template>
 
 <script>

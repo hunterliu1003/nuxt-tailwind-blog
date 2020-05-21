@@ -1,5 +1,6 @@
 <template lang="pug">
   section
+    HHeading.mb-8 關於我
     HMarkdown(:value="content")
 </template>
 

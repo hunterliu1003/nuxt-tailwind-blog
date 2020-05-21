@@ -1,7 +1,9 @@
 <template lang="pug">
   section
-    h1 標籤列表
-    NLink.block.mt-4(v-for="(tag, tagName) in tagsCount" :key="tagName" :to="`tags/${tagName}`") # {{ tagName }} : {{ tag }}
+    HHeading.mb-8 標籤列表
+    NLink.flex.items-center.py-4.leading-none(v-for="(tag, tagName) in tagsCount" :key="tagName" :to="`tags/${tagName}`")
+      h3.font-normal {{ tagName }} 
+      span.-ml-3.text-xl.text-right &nbsp;: {{ tag }}
 </template>
 
 <script>
