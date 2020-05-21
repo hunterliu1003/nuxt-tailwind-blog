@@ -1,4 +1,4 @@
-const { getTagsCount } = require('../utils/content')
+const { getTagsCount } = require('../utils/docs')
 
 module.exports = function (req, res, next) {
   if (req.method === 'GET') {

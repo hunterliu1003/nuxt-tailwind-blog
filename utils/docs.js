@@ -14,8 +14,8 @@ const getMdFiles = dir =>
         ...files,
         {
           name,
-          routePath: name.replace('content', '').replace(/\.[^/.]+$/, ''),
-          path: name.replace('content/', '').replace(/\.[^/.]+$/, ''),
+          routePath: name.replace('docs', '').replace(/\.[^/.]+$/, ''),
+          path: name.replace('docs/', '').replace(/\.[^/.]+$/, ''),
           ...mdObject,
           timestamp: new Date(mdObject.data.date || null).getTime()
         }
@@ -31,9 +31,9 @@ const getPostLinkInfo = ({ name, routePath, path, data, timestamp }) => ({
   timestamp
 })
 
-const content = getMdFiles('./content')
+const docs = getMdFiles('./docs')
 
-const getContent = () => (process.env.NODE_ENV === 'production' ? content : getMdFiles('./content'))
+const getContent = () => (process.env.NODE_ENV === 'production' ? docs : getMdFiles('./docs'))
 
 const getPosts = () =>
   getContent()

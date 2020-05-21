@@ -2,7 +2,7 @@ const $fetch = (context, url, data) => {
   return fetch(url, Object.assign({ method: 'GET' }, data))
     .then(res => res.json())
     .catch(e => {
-      context.error({ statusCode: 404, message: 'Post not found' })
+      context.error({ statusCode: 404, message: 'Doc not found' })
     })
 }
 

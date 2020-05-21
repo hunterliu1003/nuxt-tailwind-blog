@@ -1,4 +1,4 @@
-const { getPostsRoutes } = require('../utils/content')
+const { getPostsRoutes } = require('../utils/docs')
 
 module.exports = function (req, res, next) {
   if (req.method === 'GET') {

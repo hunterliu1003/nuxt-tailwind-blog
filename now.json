@@ -9,7 +9,7 @@
           "api/**",
           "assets/**",
           "serverMiddleware/**",
-          "content/**",
+          "docs/**",
           "utils/**",
           "plugins/**",
           ".nuxt/dist/sitemap-routes.json"

@@ -1,5 +1,5 @@
 const { parse } = require('querystring')
-const { getContent } = require('../utils/content')
+const { getContent } = require('../utils/docs')
 
 module.exports = function (req, res, next) {
   if (req.method === 'GET') {

@@ -1,6 +1,6 @@
 import shrinkRay from 'shrink-ray-current'
 import VueAutomaticImportPlugin from 'vue-automatic-import-loader/lib/plugin'
-import { getAllRoutes } from './utils/content'
+import { getAllRoutes } from './utils/docs'
 const allRoutes = getAllRoutes()
 
 require('dotenv').config()
