@@ -13,7 +13,7 @@ export function createRouter() {
       {
         path: '/',
         name: 'index',
-        component: () => import('~/pages/posts').then(m => m.default || m)
+        component: () => import('~/pages/about').then(m => m.default || m)
       },
       {
         path: '/posts',
@@ -24,11 +24,6 @@ export function createRouter() {
         path: '/posts/*',
         name: 'post',
         component: () => import('~/components/pages/post').then(m => m.default || m)
-      },
-      {
-        path: '/about',
-        name: 'about',
-        component: () => import('~/pages/about').then(m => m.default || m)
       },
       {
         path: '/tags',
