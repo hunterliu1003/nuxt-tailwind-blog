@@ -16,9 +16,8 @@
       .flex-grow
       NLink.next-link(v-if="post.nextPost" to="/" :to="post.nextPost.routePath || ''") {{ post.nextPost.data.title }} →
     HLazyDisqus(shortname="hunterliu-blog" :identifier="$route.fullPath")
-    h2.mt-12 近期發文
-    h3
-      NLink.block.mt-4(:to="recentPost.routePath" v-for="recentPost in recentPostsRoutes" :key="recentPost.routePath")  {{ $filter.getMMMDDYYYY(recentPost.timestamp) }} - {{ recentPost.data.title }}
+    HHeading(tag="h2").mt-12 近期發文
+    HPostList.mt-4(headingTag="h3" :postList="recentPostsRoutes")
 </template>
 
 <script>
