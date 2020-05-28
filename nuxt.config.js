@@ -93,14 +93,7 @@ export default {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode'
   ],
-  modules: [
-    '@nuxtjs/dotenv',
-    '@nuxtjs/robots',
-    '@nuxtjs/sitemap',
-    'nuxt-compress',
-    'nuxt-payload-extractor',
-    '@nuxt/content'
-  ],
+  modules: ['@nuxtjs/dotenv', '@nuxtjs/robots', '@nuxtjs/sitemap', 'nuxt-compress', '@nuxt/content'],
   content: {
     fullTextSearchFields: ['title', 'description'],
     markdown: {
