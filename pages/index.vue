@@ -8,7 +8,7 @@
 export default {
   name: 'PageAbout',
   async asyncData({ $content }) {
-    const doc = await $content('test').fetch()
+    const doc = await $content('about').fetch()
     return {
       doc
     }

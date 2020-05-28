@@ -55,8 +55,6 @@ export default {
     }
   },
   render: {
-    // generate 關閉 resourceHints
-    resourceHints: process.env.BUILD_MODE !== 'STATIC',
     // brotli 壓縮
     compressor: shrinkRay(),
     // 啟用 http2
