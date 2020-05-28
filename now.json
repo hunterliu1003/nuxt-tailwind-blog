@@ -6,11 +6,8 @@
       "use": "@nuxtjs/now-builder",
       "config": {
         "serverFiles": [
-          "api/**",
           "assets/**",
-          "serverMiddleware/**",
-          "docs/**",
-          "utils/**",
+          "content/**",
           "plugins/**",
           ".nuxt/dist/sitemap-routes.json"
         ]

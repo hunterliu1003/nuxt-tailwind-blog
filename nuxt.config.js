@@ -1,7 +1,6 @@
 import shrinkRay from 'shrink-ray-current'
 import VueAutomaticImportPlugin from 'vue-automatic-import-loader/lib/plugin'
-import { getAllRoutes } from './utils/docs'
-const allRoutes = getAllRoutes()
+import OutboundLinkHast from './assets/svg/OutboundLinkHast'
 
 require('dotenv').config()
 
@@ -43,7 +42,6 @@ export default {
     }
   },
   loading: false,
-  serverMiddleware: [{ path: '/api', handler: '@/serverMiddleware/api' }],
   optimization: {
     splitChunks: {
       cacheGroups: {
@@ -68,12 +66,11 @@ export default {
   },
   plugins: [
     // handle requests
-    '~/plugins/fetch.js',
     '~/plugins/jsonld',
     '~/plugins/filter'
   ],
   build: {
-    // extractCSS: true,
+    extractCSS: true,
     plugins: [
       new VueAutomaticImportPlugin({
         match(originalTag, { kebabTag, camelTag, path, component }) {
@@ -94,13 +91,27 @@ export default {
     '@nuxtjs/stylelint-module',
     '@nuxtjs/gtm',
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/router',
     '@nuxtjs/color-mode'
   ],
-  modules: ['@nuxtjs/dotenv', '@nuxtjs/robots', '@nuxtjs/sitemap', 'nuxt-compress', 'nuxt-payload-extractor'],
-  routerModule: {
-    /* module options */
-    keepDefaultRouter: true
+  modules: [
+    '@nuxtjs/dotenv',
+    '@nuxtjs/robots',
+    '@nuxtjs/sitemap',
+    'nuxt-compress',
+    'nuxt-payload-extractor',
+    '@nuxt/content'
+  ],
+  content: {
+    fullTextSearchFields: ['title', 'description'],
+    markdown: {
+      prism: {
+        theme: false
+      },
+      plugins: ['remark-attr'],
+      externalLinks: {
+        content: OutboundLinkHast
+      }
+    }
   },
   gtm: {
     id: process.env.GTM_ID,
@@ -121,11 +132,23 @@ export default {
     }
   ],
   sitemap: {
-    hostname: process.env.BASE_URL,
-    routes: ['/', ...allRoutes]
+    hostname: process.env.BASE_URL
   },
   generate: {
-    routes: ['/', ...allRoutes]
+    async routes() {
+      const { $content } = require('@nuxt/content')
+      let posts = await $content('posts').only(['slug', 'date']).fetch()
+      posts = posts.map(post => `/posts/${post.date}/${post.slug}`)
+      let tags = await $content('posts').only(['tags']).fetch()
+      tags = tags.reduce((acc, cur) => {
+        ;(cur.tags || []).forEach(tag => {
+          acc[tag] = (acc[tag] || 0) + 1
+        })
+        return acc
+      }, {})
+      const routes = [...posts, ...Object.keys(tags).map(tag => `/tags/${tag}`)]
+      return routes
+    }
   },
   'nuxt-compress': {
     gzip: {

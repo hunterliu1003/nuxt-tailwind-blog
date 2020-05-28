@@ -3,7 +3,6 @@
 
 html {
   @apply font-mono;
-  scroll-behavior: smooth;
 }
 h1,
 h2,

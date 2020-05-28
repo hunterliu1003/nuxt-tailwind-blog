@@ -4,7 +4,7 @@ module.exports = {
   purge: {
     enabled: process.env.NODE_ENV === 'production',
     content: [
-      'docs/**/*.md',
+      'content/**/*.md',
       'components/**/*.vue',
       'layouts/**/*.vue',
       'pages/**/*.vue',
@@ -48,7 +48,7 @@ module.exports = {
     margin: ['responsive', 'last'],
     backgroundColor: ['dark', 'dark-hover'],
     borderColor: ['dark', 'dark-focus'],
-    textColor: ['dark', 'dark-hover', 'dark-active']
+    textColor: ['hover', 'dark', 'dark-hover', 'dark-active']
   },
   plugins: [require('tailwindcss-dark-mode')()]
 }
