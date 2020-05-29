@@ -1,8 +1,8 @@
 <template lang="pug">
   button.relative.flex.items-center.h-10.px-4.bg-gray-200.dark_bg-gray-800.dark_text-dark-onSurfaceSecondary.rounded-full.text-light-onSurfacePrimary.dark_text-dark-onSurfacePrimary.focus_outline-none.transition-colors.duration-300.ease-linear(@click.prevent='setCurrentTheme')
     span.relative.w-5.h-5
-      SvgMoon(class="w-5 h-5 absolute" :class="$colorMode.preference === 'dark' ? 'show' : 'hide'" aria-label="Dark")
-      SvgSun(class="w-5 h-5 absolute" :class="$colorMode.preference === 'light' ? 'show' : 'hide'" aria-label="Light")
+      IconMoon(class="w-5 h-5 absolute" :class="$colorMode.preference === 'dark' ? 'show' : 'hide'" aria-label="Dark")
+      IconSun(class="w-5 h-5 absolute" :class="$colorMode.preference === 'light' ? 'show' : 'hide'" aria-label="Light")
 </template>
 
 <script>

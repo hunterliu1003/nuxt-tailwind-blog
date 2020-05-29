@@ -1,8 +1,8 @@
 <template lang="pug">
   article
     HHeading.mb-4 {{ doc.title }}
-    p {{ $filter.getMMMDDYYYY(doc.date) }}
-    p {{ $filter.getMMMDDYYYY(doc.createdAt) }}
+    p {{ $f.getMMMDDYYYY(doc.date) }}
+    p {{ $f.getMMMDDYYYY(doc.createdAt) }}
     HTags.my-4(:tags="doc.tags")
     ul.flex.pb-5.border-b.border-light-border.dark_border-dark-border
       li
@@ -12,7 +12,7 @@
       li.ml-auto
         HDisqusCommentCounter(shortname="hunterliu-blog")
     nuxt-content.mb-4(:document="doc")
-    p {{ $filter.getMMMDDYYYY(doc.updatedAt) }}
+    p {{ $f.getMMMDDYYYY(doc.updatedAt) }}
     .flex.justify-between.flex-wrap.my-10.pb-4.border-b.border-light-border.dark_border-dark-border
       NLink.prev-link(v-if="prev" :to="`/posts/${prev.date}/${prev.slug}`") ← {{ prev.title }}
       .flex-grow

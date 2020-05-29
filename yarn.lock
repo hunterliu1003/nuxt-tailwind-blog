@@ -918,6 +918,11 @@
     std-env "^2.2.1"
     wrap-ansi "^6.2.0"
 
+"@nuxt/components@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@nuxt/components/-/components-0.3.0.tgz#6a931d54efdf9436f948c2157dc5cfad3c7efa20"
+  integrity sha512-iL5k77INTCocB0/cWF8k8wByPmc9PT4Jhi9Ntcg30B7gi0lhNgmhmfPkhnphPiBcQSEHcX+0n8HXf/yw7znfeA==
+
 "@nuxt/config@2.12.2":
   version "2.12.2"
   resolved "https://registry.yarnpkg.com/@nuxt/config/-/config-2.12.2.tgz#df0ac32db2c7b36b5bcafc985bff1219dfe5391c"
@@ -3538,11 +3543,6 @@ dashdash@^1.12.0:
   integrity sha1-hTz6D3y+L+1d4gMmuN1YEDX24vA=
   dependencies:
     assert-plus "^1.0.0"
-
-dayjs@^1.8.26:
-  version "1.8.28"
-  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.8.28.tgz#37aa6201df483d089645cb6c8f6cef6f0c4dbc07"
-  integrity sha512-ccnYgKC0/hPSGXxj7Ju6AV/BP4HUkXC2u15mikXT5mX9YorEaoi1bEKOmAqdkJHN4EEkmAf97SpH66Try5Mbeg==
 
 de-indent@^1.0.2:
   version "1.0.2"
@@ -11428,13 +11428,6 @@ void-elements@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-2.0.1.tgz#c066afb582bb1cb4128d60ea92392e94d5e9dbec"
   integrity sha1-wGavtYK7HLQSjWDqkjkulNXp2+w=
-
-vue-automatic-import-loader@^0.1.3:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/vue-automatic-import-loader/-/vue-automatic-import-loader-0.1.4.tgz#0a4886cbf37af02bb726d35f8ed34bf63046a7c3"
-  integrity sha512-XoXaRqGIo55d8gCF9OgWttPKpqH7YseZG3uWqO0o2Sn6lLsHFZxboB6UlAGtAU8bqyvYdetEzC4jffoW4y/ozw==
-  dependencies:
-    loader-utils "^1.1.0"
 
 vue-client-only@^2.0.0:
   version "2.0.0"

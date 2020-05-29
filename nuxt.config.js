@@ -1,5 +1,4 @@
 import shrinkRay from 'shrink-ray-current'
-import VueAutomaticImportPlugin from 'vue-automatic-import-loader/lib/plugin'
 import OutboundLinkHast from './assets/svg/OutboundLinkHast'
 
 require('dotenv').config()
@@ -69,17 +68,6 @@ export default {
   ],
   build: {
     extractCSS: true,
-    plugins: [
-      new VueAutomaticImportPlugin({
-        match(originalTag, { kebabTag, camelTag, path, component }) {
-          if (kebabTag.startsWith('h-')) {
-            return [camelTag, `import ${camelTag} from '@/components/${camelTag}.vue'`]
-          } else if (kebabTag.startsWith('svg-')) {
-            return [camelTag, `import ${camelTag} from '@/components/svg/${camelTag.replace('Svg', '')}.vue'`]
-          }
-        }
-      })
-    ],
     babel: {
       presets: []
     }
@@ -89,7 +77,8 @@ export default {
     '@nuxtjs/stylelint-module',
     '@nuxtjs/gtm',
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/color-mode'
+    '@nuxtjs/color-mode',
+    '@nuxt/components'
   ],
   modules: ['@nuxtjs/dotenv', '@nuxtjs/robots', '@nuxtjs/sitemap', 'nuxt-compress', '@nuxt/content'],
   content: {
