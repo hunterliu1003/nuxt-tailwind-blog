@@ -42,6 +42,9 @@ export default {
   h3,
   p {
     color: theme('colors.light.onSurfacePrimary');
+    > a:first-of-type {
+      @apply text-light-onSurfacePrimary;
+    }
   }
   blockquote {
     color: theme('colors.light.onSurfaceSecondary');
@@ -56,6 +59,9 @@ export default {
   code {
     @apply bg-gray-100 text-red-700;
   }
+  pre code {
+    color: #e1e8f5;
+  }
 }
 
 .dark-mode .nuxt-content {
@@ -63,6 +69,9 @@ export default {
   h3,
   p {
     color: theme('colors.dark.onSurfacePrimary');
+    > a:first-of-type {
+      @apply text-dark-onSurfacePrimary;
+    }
   }
   blockquote {
     color: theme('colors.dark.onSurfaceSecondary');
@@ -95,7 +104,7 @@ export default {
   h3 {
     @apply relative table mb-8 -mt-16 pt-24 transition-colors duration-300 ease-linear;
     > a:first-of-type {
-      @apply no-underline text-white font-bold;
+      @apply no-underline font-bold;
     }
     > a:first-of-type::before {
       content: '#';
@@ -131,7 +140,6 @@ export default {
   @screen md {
     h2,
     h3 {
-      @apply -mt-24 pt-32;
       > a:first-of-type::before {
         @apply absolute -ml-4 opacity-0;
       }

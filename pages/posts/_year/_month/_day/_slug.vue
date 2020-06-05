@@ -2,7 +2,7 @@
   article
     HHeading.mb-4 {{ doc.title }}
     p {{ $f.getMMMDDYYYY(doc.date) }}
-    p {{ $f.getMMMDDYYYY(doc.createdAt) }}
+    p {{ $f.getMMMDDYYYY(doc.updatedAt) }}
     HTags.my-4(:tags="doc.tags")
     ul.flex.pb-5.border-b.border-light-border.dark_border-dark-border
       li
@@ -12,7 +12,6 @@
       li.ml-auto
         HDisqusCommentCounter(shortname="hunterliu-blog")
     nuxt-content.my-4(:document="doc")
-    p {{ $f.getMMMDDYYYY(doc.updatedAt) }}
     .flex.justify-between.flex-wrap.my-10.pb-4.border-b.border-light-border.dark_border-dark-border
       NLink.prev-link(v-if="prev" :to="`/posts/${prev.date}/${prev.slug}`") ← {{ prev.title }}
       .flex-grow
@@ -72,7 +71,7 @@ export default {
 <style lang="scss" scoped>
 .next-link,
 .prev-link {
-  @apply py-2 font-sans text-primary-dark whitespace-pre-line;
+  @apply py-2 font-sans text-primary-dark whitespace-pre-line text-xl;
 }
 .dark-mode {
   .next-link,

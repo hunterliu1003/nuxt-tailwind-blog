@@ -12,6 +12,6 @@ nav {
   padding-bottom: env(safe-area-inset-bottom);
 }
 .header-link {
-  @apply flex-grow flex items-center justify-center h-full text-sm tracking-tight;
+  @apply flex-grow flex items-center justify-center h-full text-sm tracking-tight underline;
 }
 </style>
