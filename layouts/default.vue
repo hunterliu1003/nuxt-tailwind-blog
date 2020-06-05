@@ -47,12 +47,9 @@ export default {
     color: theme('colors.light.onSurfaceSecondary');
   }
   a {
-    @apply text-primary-dark;
+    @apply text-primary-dark underline;
     code {
-      @apply text-primary-dark;
-      &:hover {
-        @apply text-nuxt-lightgreen;
-      }
+      @apply text-primary-dark underline;
     }
   }
   // inline code snippet
@@ -74,9 +71,6 @@ export default {
     @apply text-nuxt-lightgreen;
     code {
       @apply text-nuxt-lightgreen;
-      &:hover {
-        @apply text-primary-dark;
-      }
     }
   }
   // inline code snippet
@@ -100,9 +94,12 @@ export default {
   h2,
   h3 {
     @apply relative table mb-8 -mt-16 pt-24 transition-colors duration-300 ease-linear;
+    > a:first-of-type {
+      @apply no-underline text-white font-bold;
+    }
     > a:first-of-type::before {
       content: '#';
-      @apply text-nuxt-lightgreen font-normal -ml-4 pr-1 absolute opacity-0;
+      @apply text-nuxt-lightgreen font-normal pr-1;
     }
     &:hover {
       > a:first-of-type::before {
@@ -135,6 +132,9 @@ export default {
     h2,
     h3 {
       @apply -mt-24 pt-32;
+      > a:first-of-type::before {
+        @apply absolute -ml-4 opacity-0;
+      }
     }
   }
 }

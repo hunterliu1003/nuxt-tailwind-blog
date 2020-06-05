@@ -11,7 +11,7 @@
       li.ml-4 vue-goodshare
       li.ml-auto
         HDisqusCommentCounter(shortname="hunterliu-blog")
-    nuxt-content.mb-4(:document="doc")
+    nuxt-content.my-4(:document="doc")
     p {{ $f.getMMMDDYYYY(doc.updatedAt) }}
     .flex.justify-between.flex-wrap.my-10.pb-4.border-b.border-light-border.dark_border-dark-border
       NLink.prev-link(v-if="prev" :to="`/posts/${prev.date}/${prev.slug}`") ← {{ prev.title }}

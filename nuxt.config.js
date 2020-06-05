@@ -90,6 +90,9 @@ export default {
       plugins: ['remark-attr'],
       externalLinks: {
         content: OutboundLinkHast
+      },
+      autolinkHeadings: {
+        behavior: 'wrap'
       }
     }
   },
