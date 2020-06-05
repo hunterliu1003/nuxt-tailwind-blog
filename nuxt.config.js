@@ -85,7 +85,7 @@ export default {
     fullTextSearchFields: ['title', 'description'],
     markdown: {
       prism: {
-        theme: false
+        theme: 'prismjs/themes/prism-tomorrow.css'
       },
       plugins: ['remark-attr'],
       externalLinks: {
