@@ -10,7 +10,7 @@ export default {
   async asyncData({ $content, error }) {
     let posts
     try {
-      posts = await $content('posts', { deep: true }).only(['title', 'date', 'path']).sortBy('path').fetch()
+      posts = await $content('posts', { deep: true }).only(['title', 'date', 'path']).sortBy('path', 'desc').fetch()
     } catch (e) {
       return error({ statusCode: 404, message: 'Page not found' })
     }

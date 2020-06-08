@@ -32,10 +32,14 @@ export default {
     let next
     try {
       doc = await $content(`posts/${year}/${month}/${day}/${slug}`).fetch()
-      recent = await $content('posts', { deep: true }).only(['title', 'date', 'path']).sortBy('path').limit(3).fetch()
+      recent = await $content('posts', { deep: true })
+        .only(['title', 'date', 'path'])
+        .sortBy('path', 'desc')
+        .limit(3)
+        .fetch()
       const surround = await $content('posts', { deep: true })
         .only(['title', 'date', 'path'])
-        .sortBy('path')
+        .sortBy('path', 'desc')
         .surround(slug, { before: 1, after: 1 })
         .fetch()
       prev = surround[0]
