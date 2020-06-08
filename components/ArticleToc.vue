@@ -17,7 +17,7 @@
           >
             <a
               :href="`#${link.id}`"
-              class="block text-lg scrollactive-item transition-transform ease-in-out duration-200 transform hover_translate-x-1 hover_no-underline"
+              class="block text-lg scrollactive-item transition-transform ease-in-out duration-200 transform hover_translate-x-1 hover_no-underline cursor-pointer"
               :class="{
                 'py-2 font-bold': link.depth === 2,
                 'ml-2 pb-2': link.depth === 3

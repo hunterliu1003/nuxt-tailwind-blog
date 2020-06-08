@@ -8,8 +8,8 @@ export default {
     x: '0px',
     y: '0px',
     viewBox: '0 0 100 100',
-    width: '15',
-    height: '15'
+    width: '16',
+    height: '16'
   },
   children: [
     {
