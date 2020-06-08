@@ -1,7 +1,7 @@
 <template lang="pug">
-  section(class="lg_w-3/5 mx-auto lg_px-8")
+  section(class="lg_w-3/5 mx-auto lg_px-8 pt-8 lg_border-l lg_border-r border-light-border dark_border-dark-border")
     HHeading 標籤：{{ $route.params.tag }}
-    HPostList.mt-8(:postList="posts")
+    HPostList(:postList="posts")
 </template>
 
 <script>
@@ -11,7 +11,7 @@ export default {
     let posts
     try {
       posts = await $content('posts', { deep: true })
-        .only(['title', 'date', 'path'])
+        .only(['title', 'date', 'path', 'tags'])
         .where({
           tags: {
             $containsAny: [route.params.tag]

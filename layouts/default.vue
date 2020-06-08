@@ -1,8 +1,8 @@
 <template lang="pug">
   div.flex.flex-col.min-h-screen.bg-light-elevatedSurface.dark_bg-dark-elevatedSurface
     HHeader
-    main.container.mx-auto.px-4.lg_px-8.pb-16.pt-16.md_pt-24
-      nuxt
+    main.container.mx-auto.px-4.lg_px-8.pt-16
+      nuxt.nuxt-route
     HFooter.mt-auto.mb-16.md_mb-0
     HMobileMainNavigation
     HScrollTop.container.mx-auto.mb-16.md_mb-0
@@ -25,6 +25,10 @@ export default {
 </script>
 
 <style lang="scss">
+.nuxt-route {
+  min-height: calc(100vh - 48px - 80px);
+}
+
 .nuxt-content {
   a {
     word-break: break-word;

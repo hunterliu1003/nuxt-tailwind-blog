@@ -47,6 +47,7 @@ module.exports = {
   variants: {
     margin: ['responsive', 'last'],
     backgroundColor: ['dark', 'dark-hover'],
+    borderWidth: ['responsive', 'last'],
     borderColor: ['dark', 'dark-focus'],
     textColor: ['hover', 'dark', 'dark-hover', 'dark-active']
   },

@@ -1,26 +1,27 @@
 <template lang="pug">
   .flex.flex-wrap-reverse
     div(class="w-full lg_w-1/5")
-    article(class="w-full lg_w-3/5 lg_px-8")
-      HHeading.mb-4 {{ doc.title }}
-      p {{ $f.getMMMDDYYYY(doc.date) }}
-      p {{ $f.getMMMDDYYYY(doc.updatedAt) }}
-      HTags.my-4(:tags="doc.tags")
-      ul.flex.pb-5.border-b.border-light-border.dark_border-dark-border
-        li
-          HViewCounter
-        li.ml-4 fb
-        li.ml-4 vue-goodshare
-        li.ml-auto
-          HDisqusCommentCounter(shortname="hunterliu-blog")
-      nuxt-content.my-4(:document="doc")
-      .flex.justify-between.flex-wrap.my-10.pb-4.border-b.border-light-border.dark_border-dark-border
-        NLink.prev-link(v-if="prev" :to="prev.path") ← {{ prev.title }}
-        .flex-grow
-        NLink.next-link.ml-auto(v-if="next" :to="next.path") {{ next.title }} →
-      HLazyDisqus(shortname="hunterliu-blog" :identifier="$route.fullPath")
-      HHeading(tag="h2").mt-12 近期發文
-      HPostList.mt-4(headingTag="h3" :postList="recent")
+    div(class="w-full lg_w-3/5 lg_px-8 lg_border-l lg_border-r border-light-border dark_border-dark-border")
+      article.pt-8
+        HHeading.mb-4 {{ doc.title }}
+        p {{ $f.getMMMDDYYYY(doc.date) }}
+        p {{ $f.getMMMDDYYYY(doc.updatedAt) }}
+        HTags.my-4(:tags="doc.tags")
+        ul.flex.pb-5.border-b.border-light-border.dark_border-dark-border
+          li
+            HViewCounter
+          li.ml-4 fb
+          li.ml-4 vue-goodshare
+          li.ml-auto
+            HDisqusCommentCounter(shortname="hunterliu-blog")
+        nuxt-content.my-4(:document="doc")
+        .flex.justify-between.flex-wrap.my-10.pb-4.border-b.border-light-border.dark_border-dark-border
+          NLink.prev-link(v-if="prev" :to="prev.path") ← {{ prev.title }}
+          .flex-grow
+          NLink.next-link.ml-auto(v-if="next" :to="next.path") {{ next.title }} →
+        HLazyDisqus(shortname="hunterliu-blog" :identifier="$route.fullPath")
+        HHeading(tag="h2").mt-12 近期發文
+        HPostList.mt-4(headingTag="h3" :postList="recent")
     ArticleToc(v-if="doc.toc && doc.toc.length" :toc="doc.toc")
 </template>
 
@@ -36,7 +37,7 @@ export default {
     try {
       doc = await $content(`posts/${year}/${month}/${day}/${slug}`).fetch()
       recent = await $content('posts', { deep: true })
-        .only(['title', 'date', 'path'])
+        .only(['title', 'date', 'path', 'tags'])
         .sortBy('path', 'desc')
         .limit(3)
         .fetch()

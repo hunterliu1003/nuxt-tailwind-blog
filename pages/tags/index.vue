@@ -1,5 +1,5 @@
 <template lang="pug">
-  section(class="lg_w-3/5 mx-auto lg_px-8")
+  section(class="lg_w-3/5 mx-auto lg_px-8 pt-8 lg_border-l lg_border-r border-light-border dark_border-dark-border")
     HHeading.mb-8 標籤列表
     NLink.flex.items-center.py-4.leading-none(v-for="(tag, tagName) in tagsCount" :key="tagName" :to="`tags/${tagName}`")
       h3.font-normal {{ tagName }} 
