@@ -1,6 +1,6 @@
 <template lang="pug">
   header.fixed.top-0.left-0.right-0.z-30.h-16.bg-light-elevatedSurface.dark_bg-dark-elevatedSurface.border-b.border-light-border.dark_border-dark-border
-    .max-w-3xl.flex.items-center.h-full.mx-auto.px-4
+    .container.flex.items-center.h-full.mx-auto.px-4.lg_px-8
       h1.mr-auto
         NLink(to="/posts").block.text-2xl.tracking-tight HunterLiu
       nav.hidden.md_flex.md_items-center

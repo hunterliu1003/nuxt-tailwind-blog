@@ -1,11 +1,11 @@
 <template lang="pug">
   div.flex.flex-col.min-h-screen.bg-light-elevatedSurface.dark_bg-dark-elevatedSurface
     HHeader
-    main.w-full.max-w-3xl.mx-auto.px-4.pb-16.pt-16.md_pt-24
+    main.container.mx-auto.px-4.lg_px-8.pb-16.pt-16.md_pt-24
       nuxt.pt-8
     HFooter.mt-auto.mb-16.md_mb-0
     HMobileMainNavigation
-    HScrollTop.w-full.max-w-3xl.mx-auto.mb-16.md_mb-0
+    HScrollTop.container.mx-auto.mb-16.md_mb-0
 </template>
 
 <script>
@@ -102,7 +102,7 @@ export default {
   }
   h2,
   h3 {
-    @apply relative table mb-8 -mt-16 pt-24 transition-colors duration-300 ease-linear;
+    @apply mb-8 -mt-16 pt-24 transition-colors duration-300 ease-linear;
     > a:first-of-type {
       @apply no-underline font-bold;
     }
@@ -117,8 +117,8 @@ export default {
     }
     &::after {
       content: ' ';
-      width: 80%;
-      @apply block border-2 mt-2 mb-1 rounded;
+      width: 100%;
+      @apply block border mt-2 mb-1;
     }
   }
   h2 {
