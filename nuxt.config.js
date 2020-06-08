@@ -35,9 +35,7 @@ export default {
     })(),
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     bodyAttrs: {
-      class: [
-        'bg-light-surface dark_bg-dark-surface text-light-onSurfacePrimary dark_text-dark-onSurfacePrimary transition-colors duration-300 ease-linear'
-      ]
+      class: ['bg-light-surface dark_bg-dark-surface text-light-onSurfacePrimary dark_text-dark-onSurfacePrimary']
     }
   },
   loading: false,
@@ -64,7 +62,8 @@ export default {
   plugins: [
     // handle requests
     '~/plugins/jsonld',
-    '~/plugins/filter'
+    '~/plugins/filter',
+    '~/plugins/vue-scrollactive'
   ],
   build: {
     extractCSS: true,

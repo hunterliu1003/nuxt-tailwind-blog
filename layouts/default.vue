@@ -2,7 +2,7 @@
   div.flex.flex-col.min-h-screen.bg-light-elevatedSurface.dark_bg-dark-elevatedSurface
     HHeader
     main.container.mx-auto.px-4.lg_px-8.pb-16.pt-16.md_pt-24
-      nuxt.pt-8
+      nuxt
     HFooter.mt-auto.mb-16.md_mb-0
     HMobileMainNavigation
     HScrollTop.container.mx-auto.mb-16.md_mb-0
@@ -32,9 +32,6 @@ export default {
   code {
     padding: 1px 6px;
     border-radius: 4px;
-  }
-  pre {
-    @apply transition-colors duration-200 ease-linear;
   }
 }
 .nuxt-content {
@@ -102,7 +99,7 @@ export default {
   }
   h2,
   h3 {
-    @apply mb-8 -mt-16 pt-24 transition-colors duration-300 ease-linear;
+    @apply mb-8 -mt-16 pt-24;
     > a:first-of-type {
       @apply no-underline font-bold;
     }
@@ -141,7 +138,7 @@ export default {
     h2,
     h3 {
       > a:first-of-type::before {
-        @apply absolute -ml-4 opacity-0;
+        @apply absolute -ml-5 opacity-0;
       }
     }
   }
@@ -149,7 +146,7 @@ export default {
 
 .nuxt-content {
   p {
-    @apply leading-relaxed py-1 mb-2 transition-colors duration-300 ease-linear;
+    @apply leading-relaxed py-1 mb-2;
   }
   li p {
     @apply inline-block;

@@ -1,5 +1,5 @@
 <template lang="pug">
-  section
+  section(class="lg_w-3/5 mx-auto lg_px-8")
     HHeading 標籤：{{ $route.params.tag }}
     HPostList.mt-8(:postList="posts")
 </template>
