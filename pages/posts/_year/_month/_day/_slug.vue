@@ -13,9 +13,9 @@
         HDisqusCommentCounter(shortname="hunterliu-blog")
     nuxt-content.my-4(:document="doc")
     .flex.justify-between.flex-wrap.my-10.pb-4.border-b.border-light-border.dark_border-dark-border
-      NLink.prev-link(v-if="prev" :to="`/posts/${prev.date}/${prev.slug}`") ← {{ prev.title }}
+      NLink.prev-link(v-if="prev" :to="prev.path") ← {{ prev.title }}
       .flex-grow
-      NLink.next-link.ml-auto(v-if="next" :to="`/posts/${next.date}/${next.slug}`") {{ next.title }} →
+      NLink.next-link.ml-auto(v-if="next" :to="next.path") {{ next.title }} →
     HLazyDisqus(shortname="hunterliu-blog" :identifier="$route.fullPath")
     HHeading(tag="h2").mt-12 近期發文
     HPostList.mt-4(headingTag="h3" :postList="recent")
@@ -31,13 +31,11 @@ export default {
     let prev
     let next
     try {
-      doc = await $content(`posts/${slug}`)
-        .where({ date: { $eq: `${year}/${month}/${day}` } })
-        .fetch()
-      recent = await $content('posts').only(['slug', 'title', 'date']).sortBy('date', 'desc').limit(3).fetch()
-      const surround = await $content('posts')
-        .only(['slug', 'title', 'date'])
-        .sortBy('date', 'desc')
+      doc = await $content(`posts/${year}/${month}/${day}/${slug}`).fetch()
+      recent = await $content('posts', { deep: true }).only(['title', 'date', 'path']).sortBy('path').limit(3).fetch()
+      const surround = await $content('posts', { deep: true })
+        .only(['title', 'date', 'path'])
+        .sortBy('path')
         .surround(slug, { before: 1, after: 1 })
         .fetch()
       prev = surround[0]

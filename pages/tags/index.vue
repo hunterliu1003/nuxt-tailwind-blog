@@ -12,7 +12,7 @@ export default {
   async asyncData({ $content, error }) {
     let tagsCount
     try {
-      const tags = await $content('posts').only(['tags']).fetch()
+      const tags = await $content('posts', { deep: true }).only(['tags']).fetch()
       tagsCount = tags.reduce((acc, cur) => {
         ;(cur.tags || []).forEach(tag => {
           acc[tag] = (acc[tag] || 0) + 1

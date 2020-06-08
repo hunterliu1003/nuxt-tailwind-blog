@@ -120,9 +120,9 @@ export default {
   generate: {
     async routes() {
       const { $content } = require('@nuxt/content')
-      let posts = await $content('posts').only(['slug', 'date']).fetch()
-      posts = posts.map(post => `/posts/${post.date}/${post.slug}`)
-      let tags = await $content('posts').only(['tags']).fetch()
+      let posts = await $content('posts', { deep: true }).only(['path']).fetch()
+      posts = posts.map(post => post.path)
+      let tags = await $content('posts', { deep: true }).only(['tags']).fetch()
       tags = tags.reduce((acc, cur) => {
         ;(cur.tags || []).forEach(tag => {
           acc[tag] = (acc[tag] || 0) + 1

@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    NLink.flex.items-center.py-4.leading-none(v-for="post in postList" :key="`${post.date}/${post.slug}`" :to="`/posts/${post.date}/${post.slug}`")
+    NLink.flex.items-center.py-4.leading-none(v-for="post in postList" :key="post.path" :to="post.path")
       component(:is="headingTag").mr-auto.font-normal.leading-normal {{ post.title }}
       span.pl-2.text-right.text-xs.whitespace-no-wrap {{ $f.getMMMDDYYYY(post.date) }}
 </template>

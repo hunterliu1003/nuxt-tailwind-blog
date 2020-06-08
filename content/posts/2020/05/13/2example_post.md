@@ -6,7 +6,7 @@ meta:
     { name: keywords, content: super duper SEO },
   ]
 tags: ['vue', 'tailwindcss', 'markdown-it']
-date: '2020/04/24'
+date: '2020/05/13'
 ---
 
 ## Hello World!!

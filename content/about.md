@@ -17,8 +17,8 @@ description: 我不是獵頭，但我叫 **Hunter**，是個**前端工程師**�
 
 你可以透過 [Github](https://github.com/hunterliu1003) 了解我寫程式的風格，並從這幾個 repo 開始：
 
-- [nuxt-tailwind-blog](https://github.com/hunterliu1003/nuxt-tailwind-blog): 一個使用 `Nuxt.js`, `TailwindCSS`, `markdown-it` 建立的部落格，也就是現在你看到的這個網站。
-- [vue-automatic-import-loader](https://github.com/hunterliu1003/vue-automatic-import-loader): 一個 webpack 套件，目的在於自動引入 Vue Single-File Component(SFC)。
+- [nuxt-tailwind-blog](https://github.com/hunterliu1003/nuxt-tailwind-blog): 一個使用 `Nuxt.js`, `TailwindCSS` 建立的部落格，也就是現在你看到的這個網站。
+- [vue-automatic-import-loader](https://github.com/hunterliu1003/vue-automatic-import-loader): 一個 webpack 套件，能自動引入 Vue Single-File Component(SFC)。
 - [vue-randomize-svg-def-ids](https://github.com/hunterliu1003/vue-randomize-svg-def-ids) 是一個 SVG 程式碼轉換工具，使用 Vue `vm._uid` 和 `hash` 產生隨機的字串，並用來替換向量圖在 html 元素中的 id，[Demo](https://hunterliu1003.github.io/vue_randomize_svg_def_ids/)。 
 
 ### 文章連結

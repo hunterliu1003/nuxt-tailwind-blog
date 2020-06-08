@@ -10,8 +10,8 @@ export default {
   async asyncData({ $content, error, route }) {
     let posts
     try {
-      posts = await $content('posts')
-        .only(['slug', 'title', 'date'])
+      posts = await $content('posts', { deep: true })
+        .only(['title', 'date', 'path'])
         .where({
           tags: {
             $containsAny: [route.params.tag]
