@@ -1,13 +1,13 @@
 <template lang="pug">
   div.flex.flex-col.min-h-screen.bg-light-elevatedSurface.dark_bg-dark-elevatedSurface
     headroom
-      HHeader
+      h-header
     main.container.mx-auto.px-4.lg_px-8
       nuxt.nuxt-route
-    HFooter.mt-auto
+    h-footer.mt-auto
     headroom(footroom)
-      HMobileMainNavigation
-    HScrollTop.container.mx-auto.px-4.lg_px-8
+      h-mobile-main-navigation
+    h-scroll-top.container.mx-auto.lg_px-8
 </template>
 
 <script>
