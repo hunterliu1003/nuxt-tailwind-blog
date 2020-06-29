@@ -1,16 +1,23 @@
 <template lang="pug">
   div.flex.flex-col.min-h-screen.bg-light-elevatedSurface.dark_bg-dark-elevatedSurface
-    HHeader
+    headroom
+      HHeader
     main.container.mx-auto.px-4.lg_px-8
       nuxt.nuxt-route
     HFooter.mt-auto
-    HMobileMainNavigation
-    HScrollTop.container.mx-auto.mb-16.md_mb-0
+    headroom(footroom)
+      HMobileMainNavigation
+    HScrollTop.container.mx-auto.px-4.lg_px-8
 </template>
 
 <script>
+import { headroom } from 'vue-headroom'
+
 export default {
   name: 'LayoutDefault',
+  components: {
+    headroom
+  },
   head() {
     return {
       link: [

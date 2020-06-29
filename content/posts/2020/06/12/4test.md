@@ -36,7 +36,7 @@ pre[class*='language-'][data-line] {
 }
 ```
 
-### `Lorem` ([http.Requset](#123))
+### http.Requset
 
 > [`Lorem`](#Lorem) is [placeholder](#Lorem) `text` *commonly used* in the _graphic_, `print`, and __publishing__ industries for previewing layouts and visual mockups.
 

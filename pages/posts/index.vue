@@ -1,5 +1,5 @@
 <template lang="pug">
-  section(class="lg_w-4/5 mx-auto lg_px-8 pt-8 lg_border-l lg_border-r border-light-border dark_border-dark-border")
+  section(class="mx-auto lg_px-8 pt-8 lg_border-l lg_border-r border-light-border dark_border-dark-border")
     HHeading 文章列表
     HPostList(:postList="posts")
 </template>
