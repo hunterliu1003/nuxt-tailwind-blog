@@ -87,7 +87,7 @@ export default {
       prism: {
         theme: 'prismjs/themes/prism-tomorrow.css'
       },
-      plugins: ['remark-attr'],
+      // plugins: ['remark-attr'],
       externalLinks: {
         content: OutboundLinkHast
       },

@@ -224,4 +224,15 @@ export default {
     @apply list-disc;
   }
 }
+
+// table
+.nuxt-content {
+  table {
+    @apply border border-collapse rounded;
+  }
+  th,
+  td {
+    @apply px-3 py-1 border;
+  }
+}
 </style>

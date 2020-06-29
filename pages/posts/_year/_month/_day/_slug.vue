@@ -4,13 +4,13 @@
       article.pt-8
         HHeading.mb-4 {{ doc.title }}
         p {{ $f.getMMMDDYYYY(doc.date) }}
-        p {{ $f.getMMMDDYYYY(doc.updatedAt) }}
+        //- p {{ $f.getMMMDDYYYY(doc.updatedAt) }}
         HTags.my-4(:tags="doc.tags")
         ul.flex.pb-5.border-b.border-light-border.dark_border-dark-border
           li
             HViewCounter
-          li.ml-4 fb
-          li.ml-4 vue-goodshare
+          //- li.ml-4 fb
+          //- li.ml-4 vue-goodshare
           li.ml-auto
             HDisqusCommentCounter(shortname="hunterliu-blog")
         nuxt-content.my-4(:document="doc")
