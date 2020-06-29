@@ -228,7 +228,7 @@ export default {
 // table
 .nuxt-content {
   table {
-    @apply block w-full overflow-auto border border-collapse rounded;
+    @apply block w-full overflow-auto border-collapse;
   }
   th,
   td {

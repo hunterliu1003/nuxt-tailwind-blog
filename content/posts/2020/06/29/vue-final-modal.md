@@ -83,8 +83,8 @@ export default {
 
 ## Slots
 
-| Name         | Description |
-| :---          | :--- |
+| Name | Description |
+| :--- | :--- |
 | content-before  | inject an element before `content` slot |
 | content  | inject an element has class `vfm__content` by default |
 | -  | content of Modal inside slot `content` |
