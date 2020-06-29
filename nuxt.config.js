@@ -79,6 +79,7 @@ export default {
     '@nuxtjs/color-mode',
     '@nuxt/components'
   ],
+  components: true,
   modules: ['@nuxtjs/dotenv', '@nuxtjs/robots', '@nuxtjs/sitemap', 'nuxt-compress', '@nuxt/content'],
   content: {
     fullTextSearchFields: ['title', 'description'],
