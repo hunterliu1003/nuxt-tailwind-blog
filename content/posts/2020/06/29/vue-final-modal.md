@@ -90,7 +90,7 @@ export default {
 | -  | content of Modal inside slot `content` |
 | content-after  | inject an element after `content` slot |
 
-### template structure
+- template structure:
 
 ```html
 <div class="vfm__container">
@@ -115,6 +115,7 @@ export default {
 ```
 
 ## Codepen example
+
 <client-only>
     <p class="codepen" data-height="404" data-theme-id="dark" data-default-tab="html,result" data-user="hunterliu1003" data-slug-hash="PoZmbPm" style="height: 404px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Vue Final Modal">
     <span>See the Pen <a href="https://codepen.io/hunterliu1003/pen/PoZmbPm">
