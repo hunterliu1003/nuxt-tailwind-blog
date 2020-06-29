@@ -7,7 +7,7 @@
         p.mb-4 補上一些文章的簡介
       .flex.justify-between.items-end
         HTags(:tags="post.tags")
-        NLink(:to="post.path").text-sm.p-1.border.rounded.whitespace-no-wrap 閱讀文章
+        NLink(:to="post.path").text-sm.p-1.border.border-light-onSurfacePrimary.dark_border-dark-onSurfacePrimary.rounded.whitespace-no-wrap 閱讀文章
 </template>
 
 <script>

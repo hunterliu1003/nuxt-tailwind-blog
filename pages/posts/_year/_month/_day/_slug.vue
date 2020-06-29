@@ -1,7 +1,6 @@
 <template lang="pug">
   .flex.flex-wrap-reverse
-    div(class="w-full lg_w-1/5")
-    div(class="w-full lg_w-3/5 lg_px-8 lg_border-l lg_border-r border-light-border dark_border-dark-border")
+    div(class="w-full lg_w-4/5 lg_px-8 lg_border-l lg_border-r border-light-border dark_border-dark-border")
       article.pt-8
         HHeading.mb-4 {{ doc.title }}
         p {{ $f.getMMMDDYYYY(doc.date) }}

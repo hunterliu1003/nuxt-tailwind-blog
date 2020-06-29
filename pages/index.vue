@@ -1,5 +1,5 @@
 <template lang="pug">
-  section(class="lg_w-3/5 mx-auto lg_px-8 pt-8 lg_border-l lg_border-r border-light-border dark_border-dark-border")
+  section(class="mx-auto lg_px-8 pt-8 lg_border-l lg_border-r border-light-border dark_border-dark-border")
     HHeading.mb-8 關於我
     nuxt-content(:document="doc")
 </template>
